@@ -1,0 +1,85 @@
+
+
+---
+
+
+---
+
+> **[Manus 프롬프트]**
+>
+> Please create a professional company website for **"라이프이점영"**, a Korean startup. The website must be fully bilingual (Korean + English).
+>
+> ---
+>
+> **🏢 Company Overview**
+>
+> - **Company Name:** 라이프이점영
+> - **Industry:** Retirement life consulting + Smart farm (Moss/이끼 기반) startup
+> - **Stage:** Early-stage startup — pre-product, vision/concept phase
+> - **Core Business Areas:**
+>   1. Retirement life consulting platform (은퇴 설계 컨설팅 플랫폼)
+>   2. Moss smart farm KIT & ecosystem (이끼 스마트팜 KIT)
+>
+> ---
+>
+> **🎯 Primary Target Audience**
+>
+> - **은퇴 예정자 / 시니어 (50s~60s)** — people planning or entering retirement
+> - **일반 대중** — broader public curious about sustainable lifestyle & second life planning
+> - **B2B 파트너사** — potential corporate partners, institutions, distributors
+>
+> ---
+>
+> **🖥️ Website Structure**
+>
+> Build as a single-page scroll site with clear section anchors:
+>
+> 1. **Hero** — Powerful, professional headline. Vision-first. Evoke trust and curiosity. (e.g., "새로운 삶의 장을 설계합니다 / Designing the Next Chapter of Life")
+> 2. **What We Do** — Two business pillars explained concisely. Concept-level only — no product listings or pricing.
+> 3. **Who We Are** — Team & founding story. Credible and warm. Emphasize expertise and mission.
+> 4. **Where We Go** — Vision roadmap. Milestone or timeline format. Forward-looking tone.
+> 5. **How We Work** — Core values, work principles, partnership philosophy.
+> 6. **Contact / Connect** — Clean contact form or email CTA. Separate CTAs for individuals vs B2B partners.
+>
+> ---
+>
+> **🎨 Design Direction**
+>
+> - **Tone & Mood:** Professional & corporate — clean, structured, trustworthy
+> - **Feel:** "Established credibility" — like a well-funded company, not a garage startup
+> - **Color Palette:** Deep forest green + white + dark navy or charcoal — natural yet authoritative
+> - **Typography:** Structured, professional sans-serif. Korean/English bilingual-friendly (e.g., Noto Sans KR)
+> - **Layout:** Grid-based, spacious, well-organized sections
+> - **Imagery Style:** Professional lifestyle photography — active seniors, nature, clean workspace — NOT medical or elderly-care imagery
+> - **Avoid:** Playful colors, casual fonts, cluttered layouts, e-commerce UI
+>
+> ---
+>
+> **📌 Key Design Principles**
+>
+> - **Vision-first**, not sales-first — we are pre-product stage
+> - Must feel credible to **B2B partners and corporate clients**
+> - Relatable and respectful tone toward **50s~60s audience** — dignified, not patronizing
+> - Slightly **"gray area" narrative** — intriguing and open, not over-explained
+> - No shopping cart, no product pricing
+> - **Mobile responsive** is mandatory
+> - All copy should be provided in **both Korean and English** side by side or toggleable
+>
+> ---
+>
+> **📄 Deliverables**
+>
+> - Full HTML/CSS/JS website (or React)
+> - All placeholder text in Korean + English
+> - Clean, well-commented code
+> - Fully responsive (mobile + desktop + tablet)
+> - Separate CTA styling for individual visitors vs B2B inquiries
+
+---
+
+**이전 버전과 달라진 핵심 포인트:**
+
+- 디자인 톤이 **미니멀/애플풍 → 전문적/기업적**으로 바뀌었어요. 색상도 소프트 그린보다 **딥 그린 + 네이비** 계열로 무게감을 줬고요.
+- 시니어 대상이 포함된 만큼 **"품위 있고 존중하는 톤"** 명시했어요. 노인복지 느낌 나지 않도록 주의 문구도 넣었고요.
+- B2B와 일반 방문자를 구분한 **이중 CTA** 구조를 추가했어요.
+

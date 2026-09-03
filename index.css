@@ -1,0 +1,480 @@
+/*
+ * Life 2.0 — Global Design System (Business Card Palette)
+ * Design Philosophy: "Established Authority" — Deep Forest Green + Ivory Cream + Champagne Gold
+ * Extracted from official business card: #2B483C (deep forest) + #DDD5C9 (ivory) + #AE9771 (gold)
+ * Typography: Pretendard (KO) + Montserrat (EN brand) + Playfair Display (headings)
+ * Senior-first: min 18px body, 1.7 line-height, high contrast
+ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* === Business Card Palette ===
+   * Source: Life 2.0 official business card (명함)
+   * Deep Forest Green #2B483C — 명함 앞면 배경 (헤더·히어로)
+   * Forest Main       #3A6050 — 메인 버튼·강조
+   * Forest Mid        #4E7A66 — 호버·보조 강조
+   * Forest Light      #6A9B87 — 배지·아이콘·구분선
+   * Forest Pale       #A8C9BC — 카드 배경·연한 강조
+   * Ivory Cream       #DDD5C9 — 명함 뒷면 배경 (섹션 배경)
+   * Champagne Gold    #AE9771 — 명함 금박 (강조 텍스트·포인트)
+   */
+
+  /* Primary: Forest Green 계열 (명함 앞면 딥 그린 기반) */
+  --avo-deep:    #2B483C;   /* 명함 딥 포레스트 그린 — 헤더 배경, 주요 섹션 배경 */
+  --avo-main:    #3A6050;   /* Forest Main — 메인 버튼, 강조 */
+  --avo-mid:     #4E7A66;   /* Forest Mid  — 호버, 보조 강조 */
+  --avo-light:   #6A9B87;   /* Forest Light — 배지, 아이콘, 구분선 */
+  --avo-pale:    #A8C9BC;   /* Forest Pale  — 카드 배경, 연한 강조 */
+  --avo-mist:    #C8DDD8;   /* Forest Mist  — 섹션 배경 */
+  --avo-fog:     #EDF4F2;   /* Forest Fog   — 페이지 배경 */
+  --avo-cream:   #DDD5C9;   /* 명함 아이보리 크림 — 연한 배경 */
+
+  /* Neutral: Warm Ivory (명함 뒷면 아이보리 톤) */
+  --gray-white:    #FFFFFF;
+  --gray-lightest: #F5F2EE;   /* 주 배경 (아이보리 틴트) */
+  --gray-light:    #EAE5DE;   /* 카드 배경 */
+  --gray-mid:      #C8BFB4;   /* 구분선 */
+  --gray-soft:     #8A8078;   /* 보조 텍스트 */
+  --gray-dark:     #4A4038;   /* 중간 텍스트 */
+  --gray-deep:     #2E2820;   /* 본문 텍스트 */
+  --gray-ink:      #1C1810;   /* 제목 텍스트 */
+
+  /* Accent: Champagne Gold (명함 금박 기반) */
+  --mustard:       #C8A96A;   /* Gold Bright — 강조 숫자, 포인트 */
+  --mustard-light: #E8D9C0;   /* Gold Soft   — 배지, 하이라이트 */
+  --mustard-pale:  #F5EFE6;   /* Gold Pale   — 배경 강조 */
+
+  /* Gold — 명함 금박 기반 팔레트 5종 */
+  --gold-ivory:    #F0E6D6;   /* Ivory Gold       — 우아한 아이보리 골드, 배경·카드 */
+  --gold-champagne:#E8D9C0;   /* Champagne Gold   — 밝고 부드러운 샴페인, 하이라이트 */
+  --gold-harvest:  #D4B87A;   /* Pale Harvest Gold— 화사한 수확기 골드, 섹션 포인트 */
+  --gold-satin:    #C8A96A;   /* Warm Satin Gold  — 따뜻한 새틴 골드, 메인 강조 */
+  --gold-antique:  #AE9771;   /* Antique Gold     — 명함 금박, 진한 강조 */
+  --gold-deep:     #8B7555;   /* Deep Gold        — 어두운 배경 위 골드 텍스트 */
+
+  /* Semantic tokens — OKLCH format for Tailwind 4 */
+  --radius: 0.5rem;
+  --background: oklch(0.96 0.008 80);        /* ivory-cream: 아이보리 크림 배경 */
+  --foreground: oklch(0.20 0.03 60);         /* gray-deep: 따뜻한 다크 텍스트 */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.03 60);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.03 60);
+  --primary: oklch(0.42 0.08 158);           /* forest-main: #3A6050 */
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.88 0.03 80);          /* ivory-cream: #DDD5C9 */
+  --secondary-foreground: oklch(0.30 0.05 158);
+  --muted: oklch(0.92 0.02 80);
+  --muted-foreground: oklch(0.52 0.03 80);
+  --accent: oklch(0.68 0.07 65);             /* gold-satin: #C8A96A */
+  --accent-foreground: oklch(0.25 0.05 158);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.84 0.02 80);
+  --input: oklch(0.84 0.02 80);
+  --ring: oklch(0.42 0.08 158);
+  --chart-1: oklch(0.42 0.08 158);           /* forest-main */
+  --chart-2: oklch(0.52 0.08 158);           /* forest-mid */
+  --chart-3: oklch(0.62 0.07 158);           /* forest-light */
+  --chart-4: oklch(0.68 0.07 65);            /* gold-satin */
+  --chart-5: oklch(0.78 0.04 80);            /* ivory-warm */
+  --sidebar: oklch(0.96 0.008 80);
+  --sidebar-foreground: oklch(0.18 0.03 60);
+  --sidebar-primary: oklch(0.42 0.08 158);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.88 0.03 80);
+  --sidebar-accent-foreground: oklch(0.30 0.05 158);
+  --sidebar-border: oklch(0.84 0.02 80);
+  --sidebar-ring: oklch(0.42 0.08 158);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Pretendard 우선, 영문 보조 */
+    font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont,
+                 'Segoe UI', sans-serif;
+    font-size: 18px;          /* 시니어 가독성: 최소 18px */
+    line-height: 1.75;        /* 행간 1.7~1.8 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--gray-deep);
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      max-width: 1320px;
+    }
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  /* === Typography System === */
+  .font-body {
+    font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+  }
+  .font-en {
+    font-family: 'Montserrat', 'Inter', 'Helvetica Neue', sans-serif;
+    letter-spacing: 0.03em;
+  }
+  .font-display {
+    font-family: 'Playfair Display', 'Noto Serif KR', Georgia, serif;
+  }
+  .font-serif-ko {
+    font-family: 'Noto Serif KR', 'Playfair Display', Georgia, serif;
+  }
+  .font-stat {
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  /* Section label */
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--avo-main);
+  }
+
+  /* Divider line */
+  .divider-line {
+    width: 3rem;
+    height: 2px;
+    background-color: var(--avo-main);
+    display: inline-block;
+  }
+
+  /* Bilingual text block */
+  .bilingual-en {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8125rem;
+    letter-spacing: 0.05em;
+    color: var(--gray-soft);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* === CTA Buttons === */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 2rem;
+    background-color: var(--avo-main);
+    color: #FFFFFF;
+    font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: background-color 0.3s ease, border-color 0.3s ease,
+                box-shadow 0.3s ease, transform 0.2s ease;
+    border: 2px solid var(--avo-main);
+    border-radius: var(--radius);
+    will-change: transform;
+  }
+  .btn-primary:hover {
+    background-color: var(--gold-antique);
+    border-color: var(--gold-antique);
+    color: var(--avo-deep);
+    box-shadow: 0 6px 24px rgba(212, 168, 67, 0.40);
+    transform: translateY(-2px);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(106, 143, 58, 0.2);
+  }
+  .btn-primary:hover svg,
+  .btn-primary:hover .btn-icon {
+    transform: translateX(4px);
+    transition: transform 0.2s ease;
+  }
+  .btn-primary svg,
+  .btn-primary .btn-icon {
+    transition: transform 0.2s ease;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 2rem;
+    background-color: transparent;
+    color: var(--avo-main);
+    font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: background-color 0.3s ease, color 0.3s ease,
+                border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    border: 2px solid var(--avo-main);
+    border-radius: var(--radius);
+    will-change: transform;
+  }
+  .btn-secondary:hover {
+    background-color: var(--avo-main);
+    color: #FFFFFF;
+    box-shadow: 0 6px 24px rgba(106, 143, 58, 0.25);
+    transform: translateY(-2px);
+  }
+  .btn-secondary:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  .btn-navy {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 2rem;
+    background-color: var(--avo-deep);
+    color: #FFFFFF;
+    font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: background-color 0.3s ease, border-color 0.3s ease,
+                box-shadow 0.3s ease, transform 0.2s ease;
+    border: 2px solid var(--avo-deep);
+    border-radius: var(--radius);
+    will-change: transform;
+  }
+  .btn-navy:hover {
+    background-color: var(--avo-main);
+    border-color: var(--avo-main);
+    box-shadow: 0 6px 24px rgba(106, 143, 58, 0.35);
+    transform: translateY(-2px);
+  }
+  .btn-navy:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(106, 143, 58, 0.2);
+  }
+
+  .btn-ghost-white {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 2rem;
+    background-color: transparent;
+    color: #FFFFFF;
+    font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: background-color 0.3s ease, border-color 0.3s ease,
+                box-shadow 0.3s ease, transform 0.2s ease;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius);
+    will-change: transform;
+  }
+  .btn-ghost-white:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+  .btn-ghost-white:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  /* Gold accent button */
+  .btn-mustard {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 2rem;
+    background-color: var(--gold-satin);
+    color: var(--avo-deep);
+    font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    border: 2px solid var(--gold-satin);
+    border-radius: var(--radius);
+    will-change: transform;
+  }
+  .btn-mustard:hover {
+    background-color: var(--gold-antique);
+    border-color: var(--gold-antique);
+    box-shadow: 0 6px 24px rgba(212, 168, 67, 0.45);
+    transform: translateY(-2px);
+  }
+  .btn-mustard:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  /* Card styles */
+  .card-bordered {
+    border: 1px solid var(--gray-mid);
+    background-color: #FFFFFF;
+    border-radius: var(--radius);
+    transition: all 0.25s ease;
+  }
+  .card-bordered:hover {
+    border-color: var(--avo-light);
+    box-shadow: 0 4px 24px rgba(106, 143, 58, 0.12);
+  }
+
+  /* Scroll animation */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Number stat */
+  .stat-number {
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--avo-main);
+    line-height: 1;
+  }
+
+  /* Grid line decoration */
+  .grid-line-v {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gray-mid) 20%, var(--gray-mid) 80%, transparent);
+  }
+}
+
+/* Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--gold-antique), var(--gold-champagne));
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* Language toggle animation */
+.lang-ko, .lang-en {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover underline effect */
+.hover-underline {
+  position: relative;
+}
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Section number */
+.section-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--gold-antique);
+}
+
+/* Gold highlight utilities */
+.text-mustard { color: var(--gold-antique); }
+.bg-mustard { background-color: var(--avo-mist); }
+.text-forest { color: var(--avo-main); }
+.bg-forest { background-color: var(--avo-main); }

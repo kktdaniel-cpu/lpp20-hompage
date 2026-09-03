@@ -1,0 +1,5118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2막 1장 — 인생 후반전, 더 단단하게</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Life 2.0 brand palette */
+    --green: #4a7c3a;
+    --green-deep: #3d6830;
+    --green-light: #6ba055;
+    --green-soft: #d8e6cf;
+    --green-bg: #eef4e8;
+    --burgundy: #6b2c3e;
+    --burgundy-deep: #521f2f;
+    --burgundy-soft: #f0d8de;
+    --burgundy-bg: #f7e8eb;
+    --cream: #faf6ee;
+    --cream-warm: #f3ecde;
+    --gold: #c9a449;
+    --gold-soft: #f0e0b8;
+    --ink: #2a2a2e;
+    --ink-soft: #4a4a52;
+    --muted: #8a8a92;
+    --line: #e6dfd0;
+    --line-soft: #f0ebde;
+    --shadow: 0 1px 3px rgba(74,124,58,0.06), 0 4px 12px rgba(74,124,58,0.08);
+    --shadow-lg: 0 4px 16px rgba(74,124,58,0.10), 0 12px 32px rgba(74,124,58,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  /* ===== TOP NAV ===== */
+  .topnav {
+    background: rgba(250,246,238,0.95);
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    position: relative;
+  }
+  .logo-mark svg { width: 100%; height: 100%; }
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  .logo-text .ko {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green-deep);
+    letter-spacing: -1px;
+  }
+  .logo-text .en {
+    font-family: 'Fraunces', serif;
+    font-size: 11px;
+    color: var(--burgundy);
+    margin-top: 2px;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+  .nav-tag {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 32px 80px;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    text-align: center;
+    padding: 60px 0 48px;
+    position: relative;
+  }
+  .hero-pill {
+    display: inline-block;
+    background: var(--green-soft);
+    color: var(--green-deep);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--green-deep);
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 16px;
+  }
+  .hero h1 em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--burgundy);
+    font-weight: 500;
+    letter-spacing: -0.5px;
+  }
+  .hero .lede {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 580px;
+    margin: 0 auto 8px;
+    line-height: 1.7;
+  }
+  .hero .meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  /* ===== INTRO / FORM SCREEN ===== */
+  .intro-screen { display: block; }
+  .intro-screen.hidden { display: none; }
+
+  /* Progress */
+  .progress-wrap {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    padding: 0 16px;
+  }
+  .progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .progress-text {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .progress-text strong { color: var(--green-deep); }
+  .progress-percent {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--burgundy);
+  }
+  .progress-bar {
+    height: 6px;
+    background: var(--line-soft);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--green) 0%, var(--gold) 60%, var(--burgundy) 100%);
+    border-radius: 100px;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .progress-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    gap: 8px;
+  }
+  .step-dot {
+    flex: 1;
+    text-align: center;
+    padding: 8px 4px;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    border-top: 2px solid var(--line);
+    transition: all 0.3s;
+  }
+  .step-dot.active {
+    color: var(--green-deep);
+    border-top-color: var(--green);
+    font-weight: 600;
+  }
+  .step-dot.done {
+    color: var(--burgundy);
+    border-top-color: var(--burgundy);
+  }
+
+  /* Form card */
+  .form-card {
+    max-width: 720px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 24px;
+    padding: 48px 48px 40px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--line);
+  }
+
+  .form-step {
+    display: none;
+    animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .form-step.active { display: block; }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+  .form-section-title {
+    margin-bottom: 32px;
+  }
+  .form-section-title .icon {
+    width: 56px;
+    height: 56px;
+    background: var(--green-soft);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .form-section-title .icon.burgundy { background: var(--burgundy-soft); }
+  .form-section-title .icon.gold { background: var(--gold-soft); }
+  .form-section-title .icon.cream { background: var(--cream-warm); }
+  .form-section-title h2 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--green-deep);
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+  .form-section-title p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .form-group {
+    margin-bottom: 24px;
+  }
+  .form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+  }
+  .form-label .required { color: var(--burgundy); margin-left: 4px; }
+  .form-label .hint {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-left: 6px;
+  }
+  .form-input, .form-select {
+    width: 100%;
+    background: var(--cream-warm);
+    border: 2px solid transparent;
+    color: var(--ink);
+    padding: 14px 16px;
+    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s;
+    border-radius: 12px;
+  }
+  .form-input:focus, .form-select:focus {
+    outline: none;
+    border-color: var(--green);
+    background: white;
+    box-shadow: 0 0 0 4px var(--green-soft);
+  }
+  .form-input::placeholder { color: var(--muted); font-weight: 400; }
+  .form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%234a7c3a' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+    cursor: pointer;
+  }
+  .form-input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Pill choices */
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .pill-row label {
+    flex: 1;
+    min-width: fit-content;
+    padding: 12px 18px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    cursor: pointer;
+    border-radius: 100px;
+    border: 2px solid var(--line);
+    background: white;
+    text-align: center;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  .pill-row input { display: none; }
+  .pill-row label:hover {
+    border-color: var(--green);
+    color: var(--green-deep);
+  }
+  .pill-row label:has(input:checked) {
+    background: var(--green-deep);
+    color: white;
+    border-color: var(--green-deep);
+  }
+
+  .form-help {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  /* Conditional sub-section */
+  .sub-section {
+    background: var(--green-bg);
+    border-left: 3px solid var(--green);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-top: 8px;
+    display: none;
+    animation: slideUp 0.3s;
+  }
+  .sub-section.show { display: block; }
+  .sub-section .form-group:last-child { margin-bottom: 0; }
+  .sub-section .form-label { color: var(--green-deep); font-size: 13px; }
+
+  /* Asset detail block */
+  .asset-detail {
+    background: var(--cream-warm);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-top: 10px;
+    display: none;
+    animation: slideUp 0.3s;
+  }
+  .asset-detail.show { display: block; }
+  .asset-detail-row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .asset-detail-row:last-child { margin-bottom: 0; }
+  .asset-detail-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-deep);
+  }
+  .asset-detail-input {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    width: 100%;
+  }
+  .asset-detail-input:focus {
+    outline: none;
+    border-color: var(--green);
+  }
+
+  /* Insurance product block (3대 질환 등) */
+  .ins-product-block {
+    background: white;
+    border: 2px solid var(--line);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 14px;
+    transition: all 0.2s;
+  }
+  .ins-product-block.active {
+    border-color: var(--green);
+    background: var(--green-bg);
+  }
+  .ins-product-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .ins-product-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .ins-product-icon.cancer { background: var(--burgundy-soft); }
+  .ins-product-icon.brain { background: #d8e0f0; }
+  .ins-product-icon.heart { background: #f5d8d8; }
+  .ins-product-icon.life { background: var(--gold-soft); }
+  .ins-product-title {
+    flex: 1;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green-deep);
+  }
+  .ins-product-desc {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .ins-status-toggle {
+    display: flex;
+    gap: 6px;
+  }
+  .ins-status-toggle label {
+    padding: 6px 14px;
+    font-size: 12px;
+    border-radius: 100px;
+    border: 1px solid var(--line);
+    cursor: pointer;
+    background: white;
+    color: var(--ink-soft);
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .ins-status-toggle input { display: none; }
+  .ins-status-toggle label:has(input:checked) {
+    background: var(--green-deep);
+    color: white;
+    border-color: var(--green-deep);
+  }
+
+  .ins-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--line);
+    display: none;
+  }
+  .ins-product-block[data-status="가입"] .ins-detail-grid,
+  .ins-product-block[data-status="모름"] .ins-detail-grid {
+    display: grid;
+  }
+  .ins-product-block[data-status="모름"] .ins-detail-grid { opacity: 0.5; pointer-events: none; }
+  .ins-detail-label {
+    display: block;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+  .ins-detail-select {
+    width: 100%;
+    background: white;
+    border: 1px solid var(--line);
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .ins-detail-select:focus {
+    outline: none;
+    border-color: var(--green);
+  }
+
+  /* Form nav buttons */
+  .form-nav {
+    display: flex;
+    gap: 12px;
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .btn {
+    padding: 14px 32px;
+    border: 2px solid var(--green-deep);
+    background: var(--green-deep);
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex: 1;
+    border-radius: 100px;
+    letter-spacing: -0.2px;
+  }
+  .btn:hover {
+    background: var(--green);
+    border-color: var(--green);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+  }
+  .btn-primary {
+    background: var(--burgundy);
+    border-color: var(--burgundy);
+    color: white;
+  }
+  .btn-primary:hover { background: var(--burgundy-deep); border-color: var(--burgundy-deep); }
+  .btn-back {
+    flex: 0 0 auto;
+    min-width: 120px;
+    background: transparent;
+    color: var(--muted);
+    border-color: var(--line);
+  }
+  .btn-back:hover { background: var(--cream-warm); color: var(--green-deep); border-color: var(--green-deep); transform: none; box-shadow: none; }
+
+  /* ===== REPORT SCREEN ===== */
+  .report-screen { display: none; }
+  .report-screen.active { display: block; }
+
+  /* Score hero */
+  .score-hero {
+    background: var(--green-deep);
+    color: white;
+    border-radius: 32px;
+    padding: 48px 48px 40px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .score-hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(201,164,73,0.25) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .score-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(107,44,62,0.3) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .score-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .score-greeting {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+  }
+  .score-name {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+  .score-name em {
+    font-family: 'Fraunces', serif;
+    color: var(--gold-soft);
+    font-style: italic;
+    font-weight: 500;
+  }
+  .score-summary {
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .score-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .score-tag {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .score-tag.gold { background: var(--gold); border-color: var(--gold); color: var(--green-deep); }
+  .score-tag.burgundy { background: var(--burgundy); border-color: var(--burgundy); }
+
+  /* Score circle */
+  .score-circle-wrap {
+    text-align: center;
+    position: relative;
+  }
+  .score-circle {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .score-svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+  }
+  .score-bg-circle {
+    fill: none;
+    stroke: rgba(255,255,255,0.1);
+    stroke-width: 12;
+  }
+  .score-fg-circle {
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 12;
+    stroke-linecap: round;
+    transition: stroke-dasharray 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .score-num {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .score-num .big {
+    font-family: 'Fraunces', serif;
+    font-size: 64px;
+    font-weight: 600;
+    color: white;
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+  .score-num .small {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .score-num .small-ko {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+  .score-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 12px;
+    letter-spacing: 0.3px;
+  }
+  .score-label-ko {
+    font-family: 'Noto Serif KR', serif;
+    color: var(--gold-soft);
+    font-weight: 600;
+    margin-top: 4px;
+    font-size: 13px;
+  }
+
+  /* Tabs */
+  .tabs-bar {
+    background: white;
+    border-radius: 16px;
+    padding: 8px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow);
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+  }
+  .tab-btn {
+    padding: 12px 20px;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.2s;
+    white-space: nowrap;
+    letter-spacing: -0.2px;
+  }
+  .tab-btn:hover { background: var(--cream-warm); color: var(--green-deep); }
+  .tab-btn.active {
+    background: var(--green-deep);
+    color: white;
+  }
+
+  .panel { display: none; }
+  .panel.active { display: block; animation: slideUp 0.4s; }
+
+  /* SECTION */
+  .section { margin-bottom: 48px; }
+  .section-header {
+    margin-bottom: 24px;
+  }
+  .section-eyebrow {
+    display: inline-block;
+    background: var(--cream-warm);
+    color: var(--burgundy);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-eyebrow.green { background: var(--green-soft); color: var(--green-deep); }
+  .section-eyebrow.gold { background: var(--gold-soft); color: #8a6a20; }
+  .section-eyebrow.burgundy { background: var(--burgundy-soft); color: var(--burgundy-deep); }
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--green-deep);
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+  .section-title em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--burgundy);
+    font-weight: 500;
+  }
+  .section-desc {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    max-width: 720px;
+  }
+
+  /* METRIC CARDS */
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .metric-card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line-soft);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  .metric-card .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--burgundy-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .metric-card .icon.green { background: var(--green-soft); }
+  .metric-card .icon.gold { background: var(--gold-soft); }
+  .metric-card .icon.cream { background: var(--cream-warm); }
+  .metric-card .label {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    margin-bottom: 4px;
+    letter-spacing: 0.2px;
+  }
+  .metric-card .value {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--green-deep);
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: -1px;
+  }
+  .metric-card .value.burgundy { color: var(--burgundy); }
+  .metric-card .value.gold { color: #a07520; }
+  .metric-card .value.warn { color: var(--burgundy-deep); }
+  .metric-card .value .unit {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0;
+  }
+  .metric-card .desc {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  /* Content cards */
+  .content-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line-soft);
+    margin-bottom: 16px;
+  }
+
+  /* Modern table */
+  .modern-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .modern-table thead th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--line);
+  }
+  .modern-table tbody td {
+    padding: 16px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--line-soft);
+    vertical-align: middle;
+  }
+  .modern-table tbody tr:last-child td { border-bottom: none; }
+  .modern-table tbody tr:hover { background: var(--cream); }
+  .modern-table .row-name {
+    font-weight: 600;
+    color: var(--green-deep);
+  }
+  .modern-table .row-desc {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .modern-table .num {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--green-deep);
+    text-align: right;
+  }
+  .modern-table .num.burgundy { color: var(--burgundy); }
+  .modern-table .num.gold { color: #a07520; }
+  .modern-table tr.highlight {
+    background: var(--cream-warm);
+  }
+  .modern-table tr.highlight td { font-weight: 600; }
+
+  /* Status badges */
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .badge.green { background: var(--green-soft); color: var(--green-deep); }
+  .badge.burgundy { background: var(--burgundy-soft); color: var(--burgundy-deep); }
+  .badge.gold { background: var(--gold-soft); color: #8a6a20; }
+  .badge.gray { background: var(--line-soft); color: var(--muted); }
+
+  /* Insight box - 2막1장 Insight */
+  .insight {
+    background: linear-gradient(135deg, var(--green-soft) 0%, var(--gold-soft) 100%);
+    border-radius: 20px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .insight.burgundy {
+    background: linear-gradient(135deg, var(--burgundy-soft) 0%, var(--gold-soft) 100%);
+  }
+  .insight.cream {
+    background: linear-gradient(135deg, var(--cream-warm) 0%, var(--green-soft) 100%);
+  }
+  .insight-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: white;
+    color: var(--green-deep);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin-bottom: 14px;
+  }
+  .insight-label .label-ko {
+    font-family: 'Noto Serif KR', serif;
+    color: var(--burgundy);
+  }
+  .insight-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--green-deep);
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+  }
+  .insight-text strong { color: var(--burgundy); font-weight: 700; }
+  .insight-sub {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  /* Card grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .info-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 24px;
+    transition: all 0.2s;
+  }
+  .info-card:hover {
+    border-color: var(--green);
+    box-shadow: var(--shadow-lg);
+  }
+  .info-card .num {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    color: var(--burgundy);
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  .info-card h4 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+  }
+  .info-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .info-card p strong { color: var(--burgundy); font-weight: 700; }
+
+  /* Insurance row */
+  .ins-list {
+    background: white;
+    border-radius: 20px;
+    padding: 8px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line-soft);
+  }
+  .ins-row {
+    display: grid;
+    grid-template-columns: 1fr 130px 100px;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line-soft);
+    align-items: center;
+    transition: all 0.15s;
+  }
+  .ins-row:last-child { border-bottom: none; }
+  .ins-row:hover { background: var(--cream); border-radius: 12px; }
+  .ins-row .name { font-weight: 700; color: var(--green-deep); font-size: 14px; margin-bottom: 2px; font-family: 'Noto Serif KR', serif; }
+  .ins-row .meta { font-size: 12px; color: var(--muted); }
+  .ins-row .fee { font-family: 'Fraunces', serif; font-size: 17px; color: var(--green-deep); font-weight: 600; text-align: right; }
+  .ins-row .fee.burgundy { color: var(--burgundy); }
+  .ins-row .fee.gray { color: var(--muted); font-size: 13px; }
+  .ins-row .judge { text-align: center; }
+
+  /* Timeline */
+  .timeline-modern {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 32px 32px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line-soft);
+    position: relative;
+  }
+  .timeline-modern::before {
+    content: '';
+    position: absolute;
+    top: 56px;
+    left: 32px;
+    right: 32px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--burgundy) 0%, var(--gold) 50%, var(--green) 100%);
+    border-radius: 2px;
+  }
+  .tl-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    position: relative;
+  }
+  .tl-point {
+    text-align: center;
+    background: white;
+    padding: 28px 12px 12px;
+    position: relative;
+    z-index: 1;
+  }
+  .tl-point::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background: white;
+    border: 3px solid var(--green);
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .tl-point.now::before { background: var(--burgundy); border-color: var(--burgundy); }
+  .tl-point .age {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--green-deep);
+    line-height: 1;
+    letter-spacing: -1px;
+    margin-bottom: 6px;
+    margin-top: 8px;
+  }
+  .tl-point.now .age { color: var(--burgundy); }
+  .tl-point .label {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .tl-point.now .label {
+    color: var(--burgundy);
+    font-weight: 700;
+  }
+  .tl-point .desc {
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  /* Checklist */
+  .checklist-block {
+    margin-bottom: 24px;
+  }
+  .checklist-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .checklist-head .num {
+    width: 36px;
+    height: 36px;
+    background: var(--burgundy);
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .checklist-head .num.gold { background: var(--gold); color: var(--green-deep); }
+  .checklist-head .num.green { background: var(--green); color: white; }
+  .checklist-head .num.deep { background: var(--green-deep); color: white; }
+  .checklist-head .title {
+    flex: 1;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green-deep);
+    letter-spacing: -0.3px;
+  }
+  .checklist-head .when {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .check-card {
+    background: white;
+    border-radius: 16px;
+    padding: 8px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line-soft);
+  }
+  .check-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .check-line:hover { background: var(--cream); }
+  .check-mark {
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--line);
+    flex-shrink: 0;
+    margin-top: 1px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .check-line:hover .check-mark { border-color: var(--green); }
+  .check-line.checked .check-mark {
+    background: var(--green);
+    border-color: var(--green);
+  }
+  .check-line.checked .check-mark::after {
+    content: '✓';
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .check-line.checked .check-text {
+    text-decoration: line-through;
+    color: var(--muted);
+  }
+  .check-text {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.5;
+    flex: 1;
+    font-weight: 500;
+  }
+  .check-text strong {
+    display: inline-block;
+    background: var(--green-soft);
+    color: var(--green-deep);
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .check-text strong.burgundy-tag { background: var(--burgundy-soft); color: var(--burgundy-deep); }
+  .check-text strong.gold-tag { background: var(--gold-soft); color: #8a6a20; }
+  .check-text strong.cream-tag { background: var(--cream-warm); color: var(--burgundy); }
+
+  /* ===== EXPERT CONSULTATION SECTIONS ===== */
+  /* Internal Expert (Premium) Section */
+  .premium-banner {
+    background: linear-gradient(135deg, var(--green-deep) 0%, var(--burgundy-deep) 100%);
+    color: white;
+    border-radius: 24px;
+    padding: 36px 40px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .premium-banner::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 250px; height: 250px;
+    background: radial-gradient(circle, rgba(201,164,73,0.3) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .premium-banner::after {
+    content: '✦';
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    font-size: 80px;
+    color: var(--gold);
+    opacity: 0.15;
+    font-family: 'Fraunces', serif;
+  }
+  .premium-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--green-deep);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .premium-banner h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    letter-spacing: -0.8px;
+    position: relative;
+    z-index: 1;
+  }
+  .premium-banner h3 em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--gold-soft);
+    font-weight: 500;
+  }
+  .premium-banner p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    max-width: 540px;
+    position: relative;
+    z-index: 1;
+  }
+  .premium-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .premium-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 14px 16px;
+    border-radius: 14px;
+  }
+  .premium-feature-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: var(--gold);
+    color: var(--green-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .premium-feature-text {
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: rgba(255,255,255,0.95);
+  }
+  .premium-feature-text strong {
+    display: block;
+    color: var(--gold-soft);
+    font-size: 12px;
+    margin-bottom: 2px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .premium-cta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .btn-premium {
+    background: var(--gold);
+    color: var(--green-deep);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: -0.2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-premium:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201,164,73,0.4);
+  }
+  .premium-price {
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+  }
+  .premium-price strong {
+    font-family: 'Fraunces', serif;
+    color: var(--gold-soft);
+    font-size: 18px;
+    margin-right: 6px;
+    font-weight: 600;
+  }
+
+  /* Bonus gift strip */
+  .gift-strip {
+    background: var(--gold-soft);
+    border: 2px dashed var(--gold);
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .gift-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+  .gift-text {
+    flex: 1;
+  }
+  .gift-text-label {
+    font-family: 'Fraunces', serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--burgundy);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .gift-text-main {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green-deep);
+    line-height: 1.5;
+  }
+  .gift-text-main strong { color: var(--burgundy); }
+
+  /* External Expert Cards */
+  .expert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .expert-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 24px;
+    transition: all 0.2s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .expert-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--green);
+    transform: translateY(-4px);
+    transition: transform 0.2s;
+  }
+  .expert-card:hover {
+    border-color: var(--green);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  .expert-card:hover::before { transform: translateY(0); }
+  .expert-card.burgundy::before { background: var(--burgundy); }
+  .expert-card.gold::before { background: var(--gold); }
+  .expert-card.deep::before { background: var(--green-deep); }
+
+  .expert-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .expert-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: var(--green-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .expert-icon.burgundy-bg { background: var(--burgundy-soft); }
+  .expert-icon.gold-bg { background: var(--gold-soft); }
+  .expert-icon.cream-bg { background: var(--cream-warm); }
+  .expert-card-title {
+    flex: 1;
+  }
+  .expert-card-title h4 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--green-deep);
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+  .expert-card-title .area {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .expert-card-desc {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+  .expert-card-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .expert-tag {
+    background: var(--cream-warm);
+    color: var(--green-deep);
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .expert-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .expert-stat {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .expert-stat strong {
+    color: var(--green-deep);
+    font-weight: 700;
+  }
+  .btn-expert {
+    background: var(--green-deep);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-expert:hover {
+    background: var(--green);
+    transform: translateX(2px);
+  }
+
+  /* Modal */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(42, 42, 46, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.active {
+    display: flex;
+    animation: fadeIn 0.3s;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .modal {
+    background: var(--cream);
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 560px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    animation: slideUp 0.4s;
+  }
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: 1px solid var(--line);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--muted);
+    transition: all 0.2s;
+  }
+  .modal-close:hover { background: var(--burgundy-soft); color: var(--burgundy); border-color: var(--burgundy); }
+
+  .modal-header {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .modal-eyebrow {
+    display: inline-block;
+    background: var(--green-soft);
+    color: var(--green-deep);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .modal-eyebrow.burgundy { background: var(--burgundy-soft); color: var(--burgundy-deep); }
+  .modal-eyebrow.gold { background: var(--gold-soft); color: #8a6a20; }
+  .modal h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--green-deep);
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+  }
+  .modal h3 em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--burgundy);
+    font-weight: 500;
+  }
+
+  .modal-form-group {
+    margin-bottom: 16px;
+  }
+  .modal-form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin-bottom: 6px;
+  }
+  .modal-input, .modal-textarea, .modal-select {
+    width: 100%;
+    background: white;
+    border: 2px solid var(--line);
+    color: var(--ink);
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.2s;
+    resize: vertical;
+  }
+  .modal-input:focus, .modal-textarea:focus, .modal-select:focus {
+    outline: none;
+    border-color: var(--green);
+    background: white;
+    box-shadow: 0 0 0 3px var(--green-soft);
+  }
+  .modal-textarea { min-height: 80px; }
+  .modal-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%234a7c3a' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+  }
+  .modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .modal-success {
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .modal-success.show { display: block; animation: slideUp 0.5s; }
+  .modal-success-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    background: var(--green);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+  }
+  .modal-success h4 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 8px;
+  }
+  .modal-success p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* Section title for expert blocks */
+  .expert-section-divider {
+    margin: 48px 0 32px;
+    text-align: center;
+    position: relative;
+  }
+  .expert-section-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--line);
+  }
+  .expert-section-divider span {
+    background: var(--cream);
+    padding: 0 20px;
+    position: relative;
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-style: italic;
+  }
+
+  /* ===== WHAT-IF SIMULATION ===== */
+  .whatif-section {
+    background: linear-gradient(135deg, #fdf9f0 0%, #f0e6d3 100%);
+    border: 1px solid var(--gold);
+    border-radius: 24px;
+    padding: 32px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .whatif-section::before {
+    content: '✦';
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    font-family: 'Fraunces', serif;
+    font-size: 80px;
+    color: var(--gold);
+    opacity: 0.12;
+    pointer-events: none;
+  }
+  .whatif-header {
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .whatif-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--green-deep);
+    color: var(--gold-soft);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .whatif-header h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--green-deep);
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+    margin-bottom: 6px;
+  }
+  .whatif-header h3 em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--burgundy);
+    font-weight: 500;
+  }
+  .whatif-header p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* Live Score Display */
+  .whatif-score-display {
+    background: var(--green-deep);
+    border-radius: 18px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 24px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .whatif-score-display::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(201,164,73,0.3) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .whatif-score-num {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .whatif-score-num .num {
+    font-family: 'Fraunces', serif;
+    font-size: 56px;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: -2px;
+    transition: all 0.3s;
+  }
+  .whatif-score-num .label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .whatif-score-num .label-ko {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 12px;
+    color: var(--gold-soft);
+    margin-top: 2px;
+    font-weight: 600;
+  }
+  .whatif-score-change {
+    position: relative;
+    z-index: 1;
+  }
+  .whatif-change-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+  .whatif-change-value {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .whatif-change-value.up { color: #6ed8a8; }
+  .whatif-change-value.down { color: #ffb0b0; }
+  .whatif-change-value.same { color: rgba(255,255,255,0.7); }
+  .whatif-status-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    margin-top: 6px;
+    font-family: 'Noto Serif KR', serif;
+    line-height: 1.5;
+  }
+  .whatif-reset-btn {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    z-index: 1;
+  }
+  .whatif-reset-btn:hover {
+    background: rgba(255,255,255,0.2);
+  }
+
+  /* Sliders */
+  .whatif-sliders {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .whatif-slider-card {
+    background: white;
+    border-radius: 16px;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    transition: all 0.2s;
+  }
+  .whatif-slider-card:hover {
+    border-color: var(--green);
+    box-shadow: var(--shadow);
+  }
+  .whatif-slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+  }
+  .whatif-slider-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--green-deep);
+  }
+  .whatif-slider-title .icon {
+    margin-right: 6px;
+  }
+  .whatif-slider-value {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--burgundy);
+    letter-spacing: -0.5px;
+  }
+  .whatif-slider-value .unit {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    margin-left: 2px;
+  }
+  .whatif-slider-input {
+    width: 100%;
+    height: 6px;
+    background: var(--line-soft);
+    border-radius: 100px;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    margin: 8px 0;
+  }
+  .whatif-slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--burgundy);
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(107,44,62,0.4);
+    transition: all 0.15s;
+  }
+  .whatif-slider-input::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(107,44,62,0.5);
+  }
+  .whatif-slider-input::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--burgundy);
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(107,44,62,0.4);
+  }
+  .whatif-slider-range {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .whatif-slider-impact {
+    font-size: 11px;
+    color: var(--green-deep);
+    margin-top: 6px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  /* ===== SPIDER CHART ===== */
+  .spider-section {
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+    margin-bottom: 32px;
+  }
+  .spider-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .spider-chart-wrap {
+    text-align: center;
+  }
+  .spider-svg {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    margin: 0 auto;
+  }
+  .spider-axis-label {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 11px;
+    fill: var(--green-deep);
+    font-weight: 700;
+  }
+  .spider-data-fill {
+    fill: var(--green);
+    fill-opacity: 0.25;
+    stroke: var(--green);
+    stroke-width: 2;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .spider-data-point {
+    fill: var(--burgundy);
+    stroke: white;
+    stroke-width: 2;
+  }
+  .spider-grid-line {
+    fill: none;
+    stroke: var(--line);
+    stroke-width: 1;
+  }
+  .spider-axis-line {
+    stroke: var(--line);
+    stroke-width: 1;
+  }
+  .spider-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .spider-legend-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: var(--cream-warm);
+    border-radius: 12px;
+    border-left: 4px solid var(--green);
+  }
+  .spider-legend-item.low { border-left-color: var(--burgundy); background: var(--burgundy-bg); }
+  .spider-legend-item.mid { border-left-color: var(--gold); background: #fdf9eb; }
+  .spider-legend-name {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--green-deep);
+  }
+  .spider-legend-score {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--green-deep);
+  }
+  .spider-legend-item.low .spider-legend-score { color: var(--burgundy); }
+  .spider-legend-item.mid .spider-legend-score { color: #a07520; }
+
+  /* ===== WEEKLY REPORT SUBSCRIPTION ===== */
+  .report-sub-section {
+    background: linear-gradient(135deg, var(--burgundy) 0%, var(--green-deep) 100%);
+    color: white;
+    border-radius: 24px;
+    padding: 36px 40px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .report-sub-section::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(201,164,73,0.2) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .report-sub-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--green-deep);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .report-sub-section h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    letter-spacing: -0.8px;
+    position: relative;
+    z-index: 1;
+  }
+  .report-sub-section h3 em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--gold-soft);
+    font-weight: 500;
+  }
+  .report-sub-section p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+  }
+  .report-freq-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .report-freq-row label {
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+  }
+  .report-freq-row input { display: none; }
+  .report-freq-row label:hover {
+    background: rgba(255,255,255,0.15);
+  }
+  .report-freq-row label:has(input:checked) {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--green-deep);
+  }
+  .report-freq-name {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .report-freq-desc {
+    font-size: 11px;
+    opacity: 0.8;
+  }
+  .report-sub-form {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+  }
+  .report-sub-input {
+    flex: 1;
+    background: rgba(255,255,255,0.95);
+    border: 2px solid transparent;
+    color: var(--ink);
+    padding: 14px 18px;
+    font-family: inherit;
+    font-size: 14px;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+  .report-sub-input:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .report-sub-input::placeholder { color: var(--muted); }
+  .btn-subscribe {
+    background: var(--gold);
+    color: var(--green-deep);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .btn-subscribe:hover {
+    background: white;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(201,164,73,0.4);
+  }
+  .report-sub-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .report-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.9);
+  }
+  .report-feature-item::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* ===== UPGRADE CTA ===== */
+  .upgrade-cta {
+    background: linear-gradient(135deg, var(--gold) 0%, #e0b85a 100%);
+    border-radius: 24px;
+    padding: 36px 40px;
+    margin-bottom: 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: var(--green-deep);
+  }
+  .upgrade-cta::before {
+    content: '⚜';
+    position: absolute;
+    top: -20px;
+    right: 30px;
+    font-size: 120px;
+    color: rgba(74,124,58,0.15);
+    font-family: 'Fraunces', serif;
+    pointer-events: none;
+  }
+  .upgrade-eyebrow {
+    display: inline-block;
+    background: var(--green-deep);
+    color: var(--gold-soft);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .upgrade-cta h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    letter-spacing: -0.8px;
+    position: relative;
+    z-index: 1;
+  }
+  .upgrade-cta h3 em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--burgundy);
+    font-weight: 500;
+  }
+  .upgrade-cta p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0 auto 24px;
+    max-width: 520px;
+    position: relative;
+    z-index: 1;
+  }
+  .upgrade-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto 28px;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+  }
+  .upgrade-feature {
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .upgrade-feature-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--green-deep);
+    color: var(--gold);
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .upgrade-feature-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--green-deep);
+    font-weight: 500;
+  }
+  .upgrade-feature-text strong {
+    display: block;
+    color: var(--burgundy);
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .btn-upgrade {
+    background: var(--green-deep);
+    color: var(--gold);
+    border: none;
+    padding: 16px 36px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: -0.2px;
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 16px rgba(74,124,58,0.3);
+  }
+  .btn-upgrade:hover {
+    background: var(--burgundy);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(107,44,62,0.4);
+    color: white;
+  }
+  .btn-upgrade-icon {
+    font-size: 18px;
+  }
+
+  /* Starter Kit Showcase */
+  .starter-kit {
+    background: var(--paper, white);
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    margin-top: 24px;
+    border: 2px dashed var(--gold);
+    text-align: left;
+  }
+  .starter-kit-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .starter-kit-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--gold-soft);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+  .starter-kit-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 2px;
+  }
+  .starter-kit-subtitle {
+    font-size: 12px;
+    color: var(--burgundy);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  .starter-kit-badge {
+    margin-left: auto;
+    background: var(--burgundy);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+  }
+  .starter-kit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .starter-kit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    background: var(--cream-warm);
+    border-radius: 12px;
+    border-left: 3px solid var(--green);
+    text-align: left;
+  }
+  .starter-kit-item.gold { border-left-color: var(--gold); }
+  .starter-kit-item.burgundy { border-left-color: var(--burgundy); }
+  .starter-kit-item-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .starter-kit-item-text {
+    flex: 1;
+  }
+  .starter-kit-item-name {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 2px;
+  }
+  .starter-kit-item-desc {
+    font-size: 11px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+  .starter-kit-foot {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .starter-kit-foot strong {
+    color: var(--burgundy);
+    font-weight: 700;
+  }
+
+  /* Unified Expert Match */
+  .unified-match {
+    background: linear-gradient(135deg, var(--green-deep) 0%, #2a4a26 100%);
+    color: white;
+    border-radius: 24px;
+    padding: 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .unified-match::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(201,164,73,0.2) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .unified-match-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--green-deep);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .unified-match h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    letter-spacing: -0.8px;
+    position: relative;
+    z-index: 1;
+  }
+  .unified-match h3 em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--gold-soft);
+    font-weight: 500;
+  }
+  .unified-match p.intro {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+  }
+  .unified-expert-list {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .unified-expert-item {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .unified-expert-item:last-child { border-bottom: none; }
+  .unified-expert-rank {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--green-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .unified-expert-rank.rank-2 { background: rgba(255,255,255,0.9); color: var(--green-deep); }
+  .unified-expert-rank.rank-3 { background: rgba(255,255,255,0.6); color: var(--green-deep); }
+  .unified-expert-info {
+    flex: 1;
+  }
+  .unified-expert-name {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .unified-expert-tag {
+    background: var(--gold);
+    color: var(--green-deep);
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .unified-expert-org {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 4px;
+  }
+  .unified-expert-rating {
+    font-size: 11px;
+    color: var(--gold-soft);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .unified-expert-reason {
+    margin-top: 8px;
+    padding: 10px 12px;
+    background: rgba(201,164,73,0.1);
+    border-left: 2px solid var(--gold);
+    border-radius: 6px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.5;
+  }
+  .unified-expert-reason strong {
+    color: var(--gold-soft);
+    font-weight: 700;
+  }
+  .btn-unified-match {
+    background: var(--gold);
+    color: var(--green-deep);
+    border: none;
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .btn-unified-match:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201,164,73,0.4);
+  }
+  .unified-match-footer {
+    text-align: center;
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Reset button */
+  .actions-row {
+    text-align: center;
+    margin: 48px 0 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .btn-reset {
+    background: white;
+    border: 2px solid var(--line);
+    color: var(--ink-soft);
+    padding: 12px 28px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 100px;
+  }
+  .btn-reset:hover {
+    border-color: var(--green-deep);
+    color: var(--green-deep);
+    background: var(--cream-warm);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .footer-logo {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  .footer-logo em {
+    font-family: 'Fraunces', serif;
+    color: var(--burgundy);
+    font-style: italic;
+    font-weight: 500;
+  }
+  .footer-company {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .page { padding: 20px 16px 60px; }
+    .nav-inner { padding: 0 20px; }
+    .logo-text .ko { font-size: 18px; }
+    .logo-text .en { font-size: 9px; }
+    .nav-tag { display: none; }
+    .hero { padding: 32px 0 24px; }
+    .hero h1 { font-size: 36px; }
+    .form-card { padding: 28px 24px 24px; border-radius: 20px; }
+    .score-hero { padding: 32px 24px; border-radius: 24px; }
+    .score-hero-grid { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+    .score-name { font-size: 24px; }
+    .score-circle { width: 180px; height: 180px; }
+    .score-num .big { font-size: 52px; }
+    .metric-grid { grid-template-columns: 1fr; }
+    .card-grid { grid-template-columns: 1fr; }
+    .form-input-row { grid-template-columns: 1fr; }
+    .ins-row { grid-template-columns: 1fr 90px; gap: 8px; }
+    .ins-row .judge { display: none; }
+    .ins-detail-grid { grid-template-columns: 1fr; }
+    .tl-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .timeline-modern::before { display: none; }
+    .form-nav { flex-direction: column-reverse; }
+    .btn-back { width: 100%; }
+    .section-title { font-size: 24px; }
+    .pill-row { gap: 6px; }
+    .pill-row label { padding: 10px 14px; font-size: 13px; }
+    .progress-steps { flex-wrap: wrap; }
+    .step-dot { font-size: 11px; }
+    .asset-detail-row { grid-template-columns: 1fr; gap: 4px; }
+    .premium-banner { padding: 28px 24px; }
+    .premium-banner h3 { font-size: 22px; }
+    .premium-banner::after { display: none; }
+    .premium-features { grid-template-columns: 1fr; }
+    .premium-cta { flex-direction: column; align-items: stretch; }
+    .btn-premium { justify-content: center; }
+    .expert-grid { grid-template-columns: 1fr; }
+    .modal { padding: 28px 20px; }
+    .modal h3 { font-size: 20px; }
+    .modal-actions { flex-direction: column-reverse; }
+    .whatif-section { padding: 24px 20px; }
+    .whatif-header h3 { font-size: 22px; }
+    .whatif-score-display { grid-template-columns: 1fr; text-align: center; gap: 16px; padding: 20px; }
+    .whatif-sliders { grid-template-columns: 1fr; }
+    .spider-grid { grid-template-columns: 1fr; gap: 24px; }
+    .spider-section { padding: 24px 20px; }
+    .report-sub-section { padding: 28px 24px; }
+    .report-sub-section h3 { font-size: 22px; }
+    .report-freq-row { grid-template-columns: 1fr; }
+    .report-sub-form { flex-direction: column; }
+    .btn-subscribe { width: 100%; }
+    .report-sub-features { grid-template-columns: 1fr; }
+    .upgrade-cta { padding: 28px 24px; }
+    .upgrade-cta h3 { font-size: 22px; }
+    .upgrade-features-grid { grid-template-columns: 1fr; }
+    .starter-kit { padding: 20px; }
+    .starter-kit-grid { grid-template-columns: 1fr; }
+    .unified-match { padding: 24px 20px; }
+    .unified-match h3 { font-size: 22px; }
+    .unified-expert-item { grid-template-columns: 40px 1fr; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div class="nav-inner">
+    <div class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="#4a7c3a" stroke-width="6" stroke-linecap="round">
+            <path d="M50 18 Q35 30 30 50 Q35 70 50 82 Q65 70 70 50 Q65 30 50 18 Z" stroke-linejoin="round"/>
+            <circle cx="50" cy="50" r="3" fill="#6b2c3e" stroke="none"/>
+          </g>
+          <g fill="#6b2c3e">
+            <circle cx="22" cy="35" r="2.5"/>
+            <circle cx="78" cy="35" r="2.5"/>
+            <circle cx="22" cy="65" r="2.5"/>
+            <circle cx="78" cy="65" r="2.5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="ko">2막 1장</span>
+        <span class="en">LIFE 2.0 · ACT II</span>
+      </div>
+    </div>
+    <div class="nav-tag">인생 후반전, 더 단단하게</div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ===== INTRO / FORM SCREEN ===== -->
+  <div id="introScreen" class="intro-screen">
+
+    <div class="hero">
+      <div class="hero-pill">★ 인생 후반기 종합 진단</div>
+      <h1>막연한 노후를<br><em>구체적인 2막 1장</em>으로.</h1>
+      <p class="lede">10여 개의 질문에 답하시면 은퇴 자금부터 보험·웰다잉·상속까지<br>당신만의 맞춤형 2막 1장 진단서가 자동으로 완성됩니다.</p>
+      <p class="meta">⏱ 약 5분 소요 · 🔒 모든 정보는 브라우저에만 저장</p>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-wrap">
+      <div class="progress-header">
+        <div class="progress-text">Step <strong id="stepNow">1</strong> of 4</div>
+        <div class="progress-percent" id="progressPercent">25%</div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill" style="width: 25%;"></div>
+      </div>
+      <div class="progress-steps">
+        <div class="step-dot active" id="stepDot1">기본 정보</div>
+        <div class="step-dot" id="stepDot2">재무 현황</div>
+        <div class="step-dot" id="stepDot3">보험·건강</div>
+        <div class="step-dot" id="stepDot4">가족·상속</div>
+      </div>
+    </div>
+
+    <div class="form-card">
+
+      <!-- STEP 1: Profile -->
+      <div class="form-step active" data-step="1">
+        <div class="form-section-title">
+          <div class="icon">👤</div>
+          <h2>당신에 대해 알려주세요</h2>
+          <p>기본 정보를 바탕으로 맞춤형 분석을 시작합니다.</p>
+        </div>
+
+        <div class="form-input-row">
+          <div class="form-group">
+            <label class="form-label">현재 나이<span class="required">*</span></label>
+            <input type="number" class="form-input" id="age" placeholder="예: 52" min="20" max="100">
+          </div>
+          <div class="form-group">
+            <label class="form-label">성별<span class="required">*</span></label>
+            <div class="pill-row">
+              <label><input type="radio" name="gender" value="남"><span>남성</span></label>
+              <label><input type="radio" name="gender" value="여"><span>여성</span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">직업 상태<span class="required">*</span></label>
+          <div class="pill-row">
+            <label><input type="radio" name="job" value="직장인"><span>직장인</span></label>
+            <label><input type="radio" name="job" value="자영업"><span>자영업</span></label>
+            <label><input type="radio" name="job" value="프리랜서"><span>프리랜서</span></label>
+            <label><input type="radio" name="job" value="무직/기타"><span>기타</span></label>
+          </div>
+        </div>
+
+        <div class="form-input-row">
+          <div class="form-group">
+            <label class="form-label">현재 직장 재직 기간<span class="hint">직장인만</span></label>
+            <select class="form-select" id="jobYears">
+              <option value="">선택...</option>
+              <option value="1년 미만">1년 미만</option>
+              <option value="1~3년">1~3년</option>
+              <option value="3~10년">3~10년</option>
+              <option value="10년 이상">10년 이상</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">총급여 (연)<span class="hint">세전</span></label>
+            <select class="form-select" id="salary">
+              <option value="">선택...</option>
+              <option value="3000">3,000만원 이하</option>
+              <option value="5500">5,500만원 이하</option>
+              <option value="7000">7,000만원 이하</option>
+              <option value="10000">1억원 이하</option>
+              <option value="15000">1억 5천 이하</option>
+              <option value="20000">2억 이상</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button class="btn btn-primary" onclick="nextStep(1)">다음 단계로 →</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Finance -->
+      <div class="form-step" data-step="2">
+        <div class="form-section-title">
+          <div class="icon green">💰</div>
+          <h2>재무 현황</h2>
+          <p>지금의 재무 상태를 알아야 미래를 설계할 수 있습니다.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">현재 월 생활비<span class="required">*</span></label>
+          <input type="number" class="form-input" id="monthlyExpense" placeholder="예: 300 (만원 단위)">
+          <div class="form-help">은퇴 후 목표 생활비는 현재 × 70% 법칙으로 자동 계산됩니다.</div>
+        </div>
+
+        <div class="form-input-row">
+          <div class="form-group">
+            <label class="form-label">기존 모아둔 퇴직금</label>
+            <select class="form-select" id="retirement">
+              <option value="0">없음 (이직 1년 미만)</option>
+              <option value="1000">1,000만원 미만</option>
+              <option value="3000">3,000만원 미만</option>
+              <option value="5000">5,000만원 미만</option>
+              <option value="10000">1억원 미만</option>
+              <option value="20000">2억원 이상</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">개인연금 가입 여부</label>
+            <div class="pill-row">
+              <label><input type="radio" name="hasPension" value="없음" onchange="togglePensionDetail()"><span>없음</span></label>
+              <label><input type="radio" name="hasPension" value="있음" onchange="togglePensionDetail()"><span>있음</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 개인연금 상세 (조건부 표시) -->
+        <div class="sub-section" id="pensionDetail">
+          <div class="form-input-row">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">개인연금 종류</label>
+              <select class="form-select" id="pensionType">
+                <option value="">선택...</option>
+                <option value="연금저축펀드">연금저축펀드 (증권사)</option>
+                <option value="연금저축보험">연금저축보험 (보험사)</option>
+                <option value="연금저축신탁">연금저축신탁 (은행)</option>
+                <option value="IRP">IRP</option>
+                <option value="변액연금">변액연금보험</option>
+                <option value="기타">기타</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">월 납입액</label>
+              <select class="form-select" id="pensionMonthly">
+                <option value="">선택...</option>
+                <option value="10">10만원 이하</option>
+                <option value="30">10~30만원</option>
+                <option value="50">30~50만원</option>
+                <option value="70">50만원 이상</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top: 12px; margin-bottom: 0;">
+            <label class="form-label">가입 기간</label>
+            <select class="form-select" id="pensionPeriod">
+              <option value="">선택...</option>
+              <option value="3년 미만">3년 미만</option>
+              <option value="3~5년">3~5년</option>
+              <option value="5~10년">5~10년</option>
+              <option value="10년 이상">10년 이상</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">현재 보유 자산 유형<span class="hint">복수 선택 + 자산 가치</span></label>
+          <div class="pill-row">
+            <label><input type="checkbox" name="assets" value="자가주택" onchange="toggleAssetDetail('home')"><span>🏠 자가주택</span></label>
+            <label><input type="checkbox" name="assets" value="예적금" onchange="toggleAssetDetail('saving')"><span>💵 예적금</span></label>
+            <label><input type="checkbox" name="assets" value="주식펀드" onchange="toggleAssetDetail('stock')"><span>📈 주식·펀드</span></label>
+            <label><input type="checkbox" name="assets" value="부동산투자" onchange="toggleAssetDetail('estate')"><span>🏢 투자부동산</span></label>
+          </div>
+
+          <!-- 자산 상세 입력 -->
+          <div class="asset-detail" id="assetDetailHome">
+            <div class="asset-detail-row">
+              <div class="asset-detail-label">🏠 자가주택 가치</div>
+              <select class="asset-detail-input" id="assetHomeValue">
+                <option value="">선택...</option>
+                <option value="3">3억 이하</option>
+                <option value="5">3~5억</option>
+                <option value="7">5~7억</option>
+                <option value="10">7~10억</option>
+                <option value="15">10~15억</option>
+                <option value="20">15억 이상</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="asset-detail" id="assetDetailSaving">
+            <div class="asset-detail-row">
+              <div class="asset-detail-label">💵 예적금 잔액</div>
+              <select class="asset-detail-input" id="assetSavingValue">
+                <option value="">선택...</option>
+                <option value="1000">1,000만원 이하</option>
+                <option value="3000">1,000~3,000만원</option>
+                <option value="5000">3,000~5,000만원</option>
+                <option value="10000">5,000만~1억</option>
+                <option value="20000">1억~2억</option>
+                <option value="30000">2억 이상</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="asset-detail" id="assetDetailStock">
+            <div class="asset-detail-row">
+              <div class="asset-detail-label">📈 주식·펀드 평가액</div>
+              <select class="asset-detail-input" id="assetStockValue">
+                <option value="">선택...</option>
+                <option value="1000">1,000만원 이하</option>
+                <option value="3000">1,000~3,000만원</option>
+                <option value="5000">3,000~5,000만원</option>
+                <option value="10000">5,000만~1억</option>
+                <option value="20000">1억~2억</option>
+                <option value="30000">2억 이상</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="asset-detail" id="assetDetailEstate">
+            <div class="asset-detail-row">
+              <div class="asset-detail-label">🏢 투자부동산 가치</div>
+              <select class="asset-detail-input" id="assetEstateValue">
+                <option value="">선택...</option>
+                <option value="3">3억 이하</option>
+                <option value="5">3~5억</option>
+                <option value="10">5~10억</option>
+                <option value="15">10~15억</option>
+                <option value="20">15억 이상</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">월 투자 가능 금액</label>
+          <select class="form-select" id="monthlyInvest">
+            <option value="">선택...</option>
+            <option value="30">월 30만원 이하</option>
+            <option value="50">월 30~50만원</option>
+            <option value="75">월 50~75만원</option>
+            <option value="100">월 75~100만원</option>
+            <option value="150">월 100만원 이상</option>
+          </select>
+        </div>
+
+        <div class="form-nav">
+          <button class="btn btn-back" onclick="prevStep(2)">← 이전</button>
+          <button class="btn btn-primary" onclick="nextStep(2)">다음 단계로 →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Insurance (3대 질환 + 생명보험) -->
+      <div class="form-step" data-step="3">
+        <div class="form-section-title">
+          <div class="icon gold">🛡️</div>
+          <h2>보험 진단</h2>
+          <p>3대 질환 보장과 생명보험 가입 여부를 확인합니다.<br>잘 모르시면 "잘 모름"을 선택하세요.</p>
+        </div>
+
+        <!-- 암보험 -->
+        <div class="ins-product-block" data-status="" id="insBlock-cancer">
+          <div class="ins-product-header">
+            <div class="ins-product-icon cancer">🎗️</div>
+            <div class="ins-product-title">
+              암보험
+              <div class="ins-product-desc">암 진단·수술·입원 보장</div>
+            </div>
+            <div class="ins-status-toggle">
+              <label><input type="radio" name="ins-cancer" value="가입" onchange="setInsStatus('cancer','가입')"><span>가입</span></label>
+              <label><input type="radio" name="ins-cancer" value="미가입" onchange="setInsStatus('cancer','미가입')"><span>미가입</span></label>
+              <label><input type="radio" name="ins-cancer" value="모름" onchange="setInsStatus('cancer','모름')"><span>잘 모름</span></label>
+            </div>
+          </div>
+          <div class="ins-detail-grid">
+            <div>
+              <label class="ins-detail-label">월 보험료</label>
+              <select class="ins-detail-select" id="ins-cancer-fee">
+                <option value="">선택...</option>
+                <option value="3">3만원 이하</option>
+                <option value="5">3~5만원</option>
+                <option value="10">5~10만원</option>
+                <option value="15">10~15만원</option>
+                <option value="20">15만원 이상</option>
+              </select>
+            </div>
+            <div>
+              <label class="ins-detail-label">암 진단금</label>
+              <select class="ins-detail-select" id="ins-cancer-amt">
+                <option value="">선택...</option>
+                <option value="1000">1,000만원 이하</option>
+                <option value="3000">1,000~3,000만원</option>
+                <option value="5000">3,000~5,000만원</option>
+                <option value="10000">5,000만~1억</option>
+                <option value="20000">1억 이상</option>
+              </select>
+            </div>
+            <div>
+              <label class="ins-detail-label">수술비/치료비 보장</label>
+              <select class="ins-detail-select" id="ins-cancer-surg">
+                <option value="">선택...</option>
+                <option value="없음">없음</option>
+                <option value="있음">있음</option>
+              </select>
+            </div>
+            <div>
+              <label class="ins-detail-label">보장 만기</label>
+              <select class="ins-detail-select" id="ins-cancer-until">
+                <option value="">선택...</option>
+                <option value="65">65세까지</option>
+                <option value="70">70세까지</option>
+                <option value="80">80세까지</option>
+                <option value="100">80세 이상/종신</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 뇌혈관 -->
+        <div class="ins-product-block" data-status="" id="insBlock-brain">
+          <div class="ins-product-header">
+            <div class="ins-product-icon brain">🧠</div>
+            <div class="ins-product-title">
+              뇌혈관질환 보험
+              <div class="ins-product-desc">뇌졸중·뇌출혈·뇌경색 진단비</div>
+            </div>
+            <div class="ins-status-toggle">
+              <label><input type="radio" name="ins-brain" value="가입" onchange="setInsStatus('brain','가입')"><span>가입</span></label>
+              <label><input type="radio" name="ins-brain" value="미가입" onchange="setInsStatus('brain','미가입')"><span>미가입</span></label>
+              <label><input type="radio" name="ins-brain" value="모름" onchange="setInsStatus('brain','모름')"><span>잘 모름</span></label>
+            </div>
+          </div>
+          <div class="ins-detail-grid">
+            <div>
+              <label class="ins-detail-label">월 보험료</label>
+              <select class="ins-detail-select" id="ins-brain-fee">
+                <option value="">선택...</option>
+                <option value="3">3만원 이하</option>
+                <option value="5">3~5만원</option>
+                <option value="10">5~10만원</option>
+                <option value="15">10만원 이상</option>
+              </select>
+            </div>
+            <div>
+              <label class="ins-detail-label">뇌혈관 진단금</label>
+              <select class="ins-detail-select" id="ins-brain-amt">
+                <option value="">선택...</option>
+                <option value="1000">1,000만원 이하</option>
+                <option value="3000">1,000~3,000만원</option>
+                <option value="5000">3,000~5,000만원</option>
+                <option value="10000">5,000만~1억</option>
+              </select>
+            </div>
+            <div>
+              <label class="ins-detail-label">보장 범위</label>
+              <select class="ins-detail-select" id="ins-brain-scope">
+                <option value="">선택...</option>
+                <option value="협의">뇌출혈만</option>
+                <option value="중간">뇌출혈+뇌경색</option>
+                <option value="광의">뇌혈관 전체</option>
+              </select>
+            </div>
+            <div>
+              <label class="ins-detail-label">보장 만기</label>
+              <select class="ins-detail-select" id="ins-brain-until">
+                <option value="">선택...</option>
+                <option value="65">65세까지</option>
+                <option value="70">70세까지</option>
+                <option value="80">80세까지</option>
+                <option value="100">80세 이상/종신</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 심혈관 -->
+        <div class="ins-product-block" data-status="" id="insBlock-heart">
+          <div class="ins-product-header">
+            <div class="ins-product-icon heart">❤️</div>
+            <div class="ins-product-title">
+              심혈관질환 보험
+              <div class="ins-product-desc">심근경색·허혈성심장질환 진단비</div>
+            </div>
+            <div class="ins-status-toggle">
+              <label><input type="radio" name="ins-heart" value="가입" onchange="setInsStatus('heart','가입')"><span>가입</span></label>
+              <label><input type="radio" name="ins-heart" value="미가입" onchange="setInsStatus('heart','미가입')"><span>미가입</span></label>
+              <label><input type="radio" name="ins-heart" value="모름" onchange="setInsStatus('heart','모름')"><span>잘 모름</span></label>
+            </div>
+          </div>
+          <div class="ins-detail-grid">
+            <div>
+              <label class="ins-detail-label">월 보험료</label>
+              <select class="ins-detail-select" id="ins-heart-fee">
+                <option value="">선택...</option>
+                <option value="3">3만원 이하</option>
+                <option value="5">3~5만원</option>
+                <option value="10">5~10만원</option>
+                <option value="15">10만원 이상</option>
+              </select>
+            </div>
+            <div>
+              <label class="ins-detail-label">심혈관 진단금</label>
+              <select class="ins-detail-select" id="ins-heart-amt">
+                <option value="">선택...</option>
+                <option value="1000">1,000만원 이하</option>
+                <option value="3000">1,000~3,000만원</option>
+                <option value="5000">3,000~5,000만원</option>
+                <option value="10000">5,000만~1억</option>
+              </select>
+            </div>
+            <div>
+              <label class="ins-detail-label">보장 범위</label>
+              <select class="ins-detail-select" id="ins-heart-scope">
+                <option value="">선택...</option>
+                <option value="협의">급성심근경색만</option>
+                <option value="광의">허혈성심장질환 전체</option>
+              </select>
+            </div>
+            <div>
+              <label class="ins-detail-label">보장 만기</label>
+              <select class="ins-detail-select" id="ins-heart-until">
+                <option value="">선택...</option>
+                <option value="65">65세까지</option>
+                <option value="70">70세까지</option>
+                <option value="80">80세까지</option>
+                <option value="100">80세 이상/종신</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 생명보험 -->
+        <div class="ins-product-block" data-status="" id="insBlock-life">
+          <div class="ins-product-header">
+            <div class="ins-product-icon life">🌳</div>
+            <div class="ins-product-title">
+              생명보험 (종신/정기)
+              <div class="ins-product-desc">사망 시 가족 생활 보장</div>
+            </div>
+            <div class="ins-status-toggle">
+              <label><input type="radio" name="ins-life" value="가입" onchange="setInsStatus('life','가입')"><span>가입</span></label>
+              <label><input type="radio" name="ins-life" value="미가입" onchange="setInsStatus('life','미가입')"><span>미가입</span></label>
+              <label><input type="radio" name="ins-life" value="모름" onchange="setInsStatus('life','모름')"><span>잘 모름</span></label>
+            </div>
+          </div>
+          <div class="ins-detail-grid">
+            <div>
+              <label class="ins-detail-label">월 보험료</label>
+              <select class="ins-detail-select" id="ins-life-fee">
+                <option value="">선택...</option>
+                <option value="10">10만원 이하</option>
+                <option value="20">10~20만원</option>
+                <option value="30">20~30만원</option>
+                <option value="50">30만원 이상</option>
+              </select>
+            </div>
+            <div>
+              <label class="ins-detail-label">사망보험금</label>
+              <select class="ins-detail-select" id="ins-life-amt">
+                <option value="">선택...</option>
+                <option value="5000">5,000만원 이하</option>
+                <option value="10000">5,000만~1억</option>
+                <option value="30000">1억~3억</option>
+                <option value="50000">3억~5억</option>
+                <option value="100000">5억 이상</option>
+              </select>
+            </div>
+            <div>
+              <label class="ins-detail-label">상품 종류</label>
+              <select class="ins-detail-select" id="ins-life-type">
+                <option value="">선택...</option>
+                <option value="종신보험">종신보험 (평생)</option>
+                <option value="정기보험">정기보험 (기간한정)</option>
+                <option value="변액종신">변액종신보험</option>
+              </select>
+            </div>
+            <div>
+              <label class="ins-detail-label">보장 만기</label>
+              <select class="ins-detail-select" id="ins-life-until">
+                <option value="">선택...</option>
+                <option value="60">60세까지</option>
+                <option value="70">70세까지</option>
+                <option value="80">80세까지</option>
+                <option value="999">종신</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 24px;">
+          <label class="form-label">가족력 / 건강 우려사항<span class="hint">복수 선택</span></label>
+          <div class="pill-row">
+            <label><input type="checkbox" name="health" value="뇌혈관"><span>🧠 뇌혈관</span></label>
+            <label><input type="checkbox" name="health" value="심혈관"><span>❤️ 심혈관</span></label>
+            <label><input type="checkbox" name="health" value="암"><span>🎗️ 암</span></label>
+            <label><input type="checkbox" name="health" value="당뇨"><span>🩸 당뇨</span></label>
+            <label><input type="checkbox" name="health" value="없음"><span>특이사항 없음</span></label>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button class="btn btn-back" onclick="prevStep(3)">← 이전</button>
+          <button class="btn btn-primary" onclick="nextStep(3)">다음 단계로 →</button>
+        </div>
+      </div>
+
+      <!-- STEP 4: Family -->
+      <div class="form-step" data-step="4">
+        <div class="form-section-title">
+          <div class="icon cream">👨‍👩‍👧</div>
+          <h2>가족 및 상속 상황</h2>
+          <p>유산 설계와 웰다잉 준비의 시작점입니다.</p>
+        </div>
+
+        <div class="form-input-row">
+          <div class="form-group">
+            <label class="form-label">결혼 여부</label>
+            <div class="pill-row">
+              <label><input type="radio" name="marriage" value="기혼"><span>기혼</span></label>
+              <label><input type="radio" name="marriage" value="미혼"><span>미혼</span></label>
+              <label><input type="radio" name="marriage" value="이혼/사별"><span>이혼/사별</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">자녀 수</label>
+            <select class="form-select" id="children">
+              <option value="0">없음</option>
+              <option value="1">1명</option>
+              <option value="2">2명</option>
+              <option value="3">3명 이상</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">예상되는 상속 재산<span class="hint">부모님 등에게서</span></label>
+          <div class="pill-row">
+            <label><input type="radio" name="inheritance" value="없음"><span>없음</span></label>
+            <label><input type="radio" name="inheritance" value="소액"><span>소액 (1억 이하)</span></label>
+            <label><input type="radio" name="inheritance" value="중간"><span>중간 (5억 이하)</span></label>
+            <label><input type="radio" name="inheritance" value="대규모"><span>대규모 (10억 이상)</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">웰다잉 준비 관심사<span class="hint">복수 선택</span></label>
+          <div class="pill-row">
+            <label><input type="checkbox" name="welldying" value="상조"><span>🕯 상조</span></label>
+            <label><input type="checkbox" name="welldying" value="연명의료"><span>📋 연명의료</span></label>
+            <label><input type="checkbox" name="welldying" value="유언장"><span>📜 유언장</span></label>
+            <label><input type="checkbox" name="welldying" value="장례"><span>⚱️ 장례</span></label>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button class="btn btn-back" onclick="prevStep(4)">← 이전</button>
+          <button class="btn btn-primary" onclick="generateReport()">진단서 생성 ✨</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== REPORT SCREEN ===== -->
+  <div id="reportScreen" class="report-screen">
+
+    <!-- Score Hero -->
+    <div class="score-hero">
+      <div class="score-hero-grid">
+        <div>
+          <div class="score-greeting">2막 1장 진단서 · Personal Diagnostic · 2026</div>
+          <div class="score-name">당신의 <em id="rNameAge">52세</em>를<br>위한 맞춤 2막 1장</div>
+          <div class="score-summary" id="rSummary">
+            절세 3총사로 시작하면 충분히 따라잡을 수 있습니다.<br>
+            지금 시작하면 10년 후 든든한 노후가 보입니다.
+          </div>
+          <div class="score-tags" id="rTags"></div>
+        </div>
+        <div class="score-circle-wrap">
+          <div class="score-circle">
+            <svg class="score-svg" viewBox="0 0 200 200">
+              <circle class="score-bg-circle" cx="100" cy="100" r="85"></circle>
+              <circle class="score-fg-circle" id="scoreFgCircle" cx="100" cy="100" r="85" stroke-dasharray="0 534"></circle>
+            </svg>
+            <div class="score-num">
+              <div class="big" id="rScore">68</div>
+              <div class="small">Readiness</div>
+              <div class="small-ko">은퇴 준비 점수</div>
+            </div>
+          </div>
+          <div class="score-label">Financial Wellness Score</div>
+          <div class="score-label-ko">재무 건강 점수</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-bar">
+      <button class="tab-btn active" onclick="switchPanel(event,'retire')">💰 은퇴 자금</button>
+      <button class="tab-btn" onclick="switchPanel(event,'insurance')">🛡 보험 진단</button>
+      <button class="tab-btn" onclick="switchPanel(event,'welldying')">🕯 웰다잉</button>
+      <button class="tab-btn" onclick="switchPanel(event,'legacy')">📜 상속 설계</button>
+      <button class="tab-btn" onclick="switchPanel(event,'simulation')">🎯 What-If</button>
+      <button class="tab-btn" onclick="switchPanel(event,'checklist')">✅ 실행 계획</button>
+    </div>
+
+    <div id="panel-retire" class="panel active"></div>
+    <div id="panel-insurance" class="panel"></div>
+    <div id="panel-welldying" class="panel"></div>
+    <div id="panel-legacy" class="panel"></div>
+    <div id="panel-simulation" class="panel"></div>
+    <div id="panel-checklist" class="panel"></div>
+
+    <div class="actions-row">
+      <button class="btn-reset" onclick="resetForm()">↺ 새로 진단하기</button>
+    </div>
+
+    <div class="footer">
+      <div class="footer-logo">2막 1장 <em>· Life 2.0</em></div>
+      <p>본 진단은 일반적인 가이드입니다. 실제 결정 전 전문가 상담을 권장합니다.<br>2026년 5월 기준 정보 · 입력값은 브라우저에만 저장됩니다.</p>
+      <div class="footer-company">© 주식회사 라이프 2.0 · LIFE 2.0 CO., LTD</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== MODAL: Internal Premium Consultation ===== -->
+<div class="modal-overlay" id="modal-premium" onclick="if(event.target===this)closeModal('modal-premium')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-premium')">×</button>
+    <div class="modal-form" id="premiumForm">
+      <div class="modal-header">
+        <span class="modal-eyebrow gold">★ Life 2.0 Premium</span>
+        <h3>2막1장 <em>전담 플래너</em>와<br>직접 상담하기</h3>
+      </div>
+
+      <div class="gift-strip" style="margin-bottom: 20px;">
+        <div class="gift-icon">🎁</div>
+        <div class="gift-text">
+          <div class="gift-text-label">신규 가입 특전</div>
+          <div class="gift-text-main">상담 신청 시 <strong>2막1장 시작 키트</strong> 무료 발송<br>(연금 전략 가이드북 + 보험 점검 체크리스트)</div>
+        </div>
+      </div>
+
+      <div class="modal-form-group">
+        <label class="modal-form-label">상담 희망 분야 <span style="color:var(--burgundy);">*</span></label>
+        <select class="modal-select" id="premiumArea">
+          <option value="">선택...</option>
+          <option value="종합">종합 컨설팅 (전 영역)</option>
+          <option value="은퇴">은퇴 자금 설계</option>
+          <option value="보험">보험 포트폴리오 점검</option>
+          <option value="상속">상속·증여 전략</option>
+          <option value="웰다잉">웰다잉 준비</option>
+        </select>
+      </div>
+
+      <div class="modal-form-group">
+        <label class="modal-form-label">성함 <span style="color:var(--burgundy);">*</span></label>
+        <input type="text" class="modal-input" id="premiumName" placeholder="홍길동">
+      </div>
+
+      <div class="modal-form-group">
+        <label class="modal-form-label">연락처 <span style="color:var(--burgundy);">*</span></label>
+        <input type="tel" class="modal-input" id="premiumPhone" placeholder="010-0000-0000">
+      </div>
+
+      <div class="modal-form-group">
+        <label class="modal-form-label">상담 희망 시간대</label>
+        <select class="modal-select" id="premiumTime">
+          <option value="">선택...</option>
+          <option value="평일 오전">평일 오전 (9-12시)</option>
+          <option value="평일 오후">평일 오후 (1-6시)</option>
+          <option value="평일 저녁">평일 저녁 (6-9시)</option>
+          <option value="주말">주말 가능</option>
+        </select>
+      </div>
+
+      <div class="modal-form-group">
+        <label class="modal-form-label">메모 (선택)</label>
+        <textarea class="modal-textarea" id="premiumMemo" placeholder="궁금하신 점이나 미리 알려주실 내용이 있다면..."></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-back" style="flex:1;" onclick="closeModal('modal-premium')">취소</button>
+        <button class="btn btn-primary" style="flex:1;" onclick="submitPremium()">상담 신청하기</button>
+      </div>
+    </div>
+
+    <div class="modal-success" id="premiumSuccess">
+      <div class="modal-success-icon">✓</div>
+      <h4>상담 신청 완료!</h4>
+      <p>1영업일 이내 담당 플래너가 연락드립니다.<br>2막1장 시작 키트도 함께 발송됩니다.</p>
+      <button class="btn btn-primary" style="margin-top:24px;" onclick="closeModal('modal-premium')">확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL: External Expert Match ===== -->
+<div class="modal-overlay" id="modal-expert" onclick="if(event.target===this)closeModal('modal-expert')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-expert')">×</button>
+    <div class="modal-form" id="expertForm">
+      <div class="modal-header">
+        <span class="modal-eyebrow burgundy">AI 맞춤 매칭</span>
+        <h3>맞춤형 솔루션<br><em>전문가 TOP 3</em>에게 연결</h3>
+      </div>
+
+      <p style="font-size:13px;color:var(--ink-soft);line-height:1.7;margin-bottom:20px;">
+        <strong style="color:var(--green-deep);">AI가 추천한 3분의 전문가</strong>에게 동시에 진단 리포트를 전달합니다. 각 전문가가 24시간 내 무료 상담 제안을 보내드립니다.
+        <br><span style="color:var(--muted);font-size:12px;">최초 상담은 무료이며, 이후 상담은 전문가별 정책에 따릅니다.</span>
+      </p>
+
+      <div class="modal-form-group">
+        <label class="modal-form-label">매칭 영역 <span style="color:var(--muted);font-weight:400;font-size:11px;margin-left:4px;">(AI 자동 추천 결과)</span></label>
+        <div style="background:var(--green-bg);border:1px solid var(--green);padding:12px 14px;border-radius:10px;font-size:13px;color:var(--green-deep);font-weight:600;" id="expertAutoMatch">
+          진단 결과 기반 TOP 3 전문가에게 일괄 전송
+        </div>
+        <input type="hidden" id="expertArea" value="자동매칭">
+      </div>
+
+      <div class="modal-form-group">
+        <label class="modal-form-label">성함 <span style="color:var(--burgundy);">*</span></label>
+        <input type="text" class="modal-input" id="expertName" placeholder="홍길동">
+      </div>
+
+      <div class="modal-form-group">
+        <label class="modal-form-label">연락처 <span style="color:var(--burgundy);">*</span></label>
+        <input type="tel" class="modal-input" id="expertPhone" placeholder="010-0000-0000">
+      </div>
+
+      <div class="modal-form-group">
+        <label class="modal-form-label">선호 지역</label>
+        <select class="modal-select" id="expertRegion">
+          <option value="">선택...</option>
+          <option value="서울">서울</option>
+          <option value="경기">경기·인천</option>
+          <option value="강원">강원</option>
+          <option value="충청">충청</option>
+          <option value="전라">전라·광주</option>
+          <option value="경상">경상·부산·대구</option>
+          <option value="제주">제주</option>
+          <option value="비대면">비대면 상관없음</option>
+        </select>
+      </div>
+
+      <div class="modal-form-group">
+        <label class="modal-form-label">상담 내용 (선택)</label>
+        <textarea class="modal-textarea" id="expertMemo" placeholder="구체적인 상담 내용이 있다면 미리 알려주세요."></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-back" style="flex:1;" onclick="closeModal('modal-expert')">취소</button>
+        <button class="btn btn-primary" style="flex:1;" onclick="submitExpert()">매칭 신청하기</button>
+      </div>
+    </div>
+
+    <div class="modal-success" id="expertSuccess">
+      <div class="modal-success-icon">✓</div>
+      <h4>매칭 신청 완료!</h4>
+      <p>AI 추천 TOP 3 전문가에게<br>진단 리포트가 일괄 전송되었습니다.<br>24시간 내 각 전문가로부터 연락이 갑니다.</p>
+      <button class="btn btn-primary" style="margin-top:24px;" onclick="closeModal('modal-expert')">확인</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let currentStep = 1;
+let userData = {};
+let insStatuses = { cancer: '', brain: '', heart: '', life: '' };
+
+function togglePensionDetail() {
+  const has = document.querySelector('input[name="hasPension"]:checked')?.value;
+  document.getElementById('pensionDetail').classList.toggle('show', has === '있음');
+}
+
+function toggleAssetDetail(type) {
+  const map = {home:'자가주택', saving:'예적금', stock:'주식펀드', estate:'부동산투자'};
+  const idMap = {home:'assetDetailHome', saving:'assetDetailSaving', stock:'assetDetailStock', estate:'assetDetailEstate'};
+  const checked = document.querySelector(`input[name="assets"][value="${map[type]}"]`).checked;
+  document.getElementById(idMap[type]).classList.toggle('show', checked);
+}
+
+function setInsStatus(type, status) {
+  insStatuses[type] = status;
+  document.getElementById('insBlock-' + type).setAttribute('data-status', status);
+}
+
+function nextStep(step) {
+  if (!validateStep(step)) return;
+  saveStepData(step);
+  currentStep = step + 1;
+  showStep(currentStep);
+}
+
+function prevStep(step) {
+  currentStep = step - 1;
+  showStep(currentStep);
+}
+
+function showStep(step) {
+  document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+  document.querySelector(`.form-step[data-step="${step}"]`).classList.add('active');
+  document.getElementById('stepNow').textContent = step;
+  document.getElementById('progressPercent').textContent = (step * 25) + '%';
+  document.getElementById('progressFill').style.width = (step * 25) + '%';
+  for (let i = 1; i <= 4; i++) {
+    const dot = document.getElementById('stepDot' + i);
+    dot.classList.remove('active', 'done');
+    if (i < step) dot.classList.add('done');
+    else if (i === step) dot.classList.add('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function validateStep(step) {
+  if (step === 1) {
+    if (!document.getElementById('age').value || !document.querySelector('input[name="gender"]:checked') || !document.querySelector('input[name="job"]:checked')) {
+      alert('필수 항목을 모두 입력해주세요.');
+      return false;
+    }
+  }
+  if (step === 2 && !document.getElementById('monthlyExpense').value) {
+    alert('월 생활비를 입력해주세요.');
+    return false;
+  }
+  return true;
+}
+
+function saveStepData(step) {
+  if (step === 1) {
+    userData.age = parseInt(document.getElementById('age').value);
+    userData.gender = document.querySelector('input[name="gender"]:checked')?.value;
+    userData.job = document.querySelector('input[name="job"]:checked')?.value;
+    userData.jobYears = document.getElementById('jobYears').value;
+    userData.salary = parseInt(document.getElementById('salary').value) || 0;
+  }
+  if (step === 2) {
+    userData.monthlyExpense = parseInt(document.getElementById('monthlyExpense').value);
+    userData.retirement = parseInt(document.getElementById('retirement').value) || 0;
+    userData.hasPension = document.querySelector('input[name="hasPension"]:checked')?.value || '없음';
+    userData.pensionType = document.getElementById('pensionType').value;
+    userData.pensionMonthly = document.getElementById('pensionMonthly').value;
+    userData.pensionPeriod = document.getElementById('pensionPeriod').value;
+    userData.assets = Array.from(document.querySelectorAll('input[name="assets"]:checked')).map(e => e.value);
+    userData.assetHomeValue = parseInt(document.getElementById('assetHomeValue').value) || 0;
+    userData.assetSavingValue = parseInt(document.getElementById('assetSavingValue').value) || 0;
+    userData.assetStockValue = parseInt(document.getElementById('assetStockValue').value) || 0;
+    userData.assetEstateValue = parseInt(document.getElementById('assetEstateValue').value) || 0;
+    userData.totalAssets = (userData.assetHomeValue + userData.assetEstateValue) * 10000 + userData.assetSavingValue + userData.assetStockValue;
+    userData.monthlyInvest = parseInt(document.getElementById('monthlyInvest').value) || 50;
+  }
+  if (step === 3) {
+    userData.insurances = {};
+    ['cancer','brain','heart','life'].forEach(type => {
+      const status = insStatuses[type];
+      const fee = parseInt(document.getElementById(`ins-${type}-fee`).value) || 0;
+      const amt = parseInt(document.getElementById(`ins-${type}-amt`).value) || 0;
+      userData.insurances[type] = { status, fee, amt };
+      if (type === 'cancer') {
+        userData.insurances[type].surg = document.getElementById('ins-cancer-surg').value;
+        userData.insurances[type].until = parseInt(document.getElementById('ins-cancer-until').value) || 0;
+      }
+      if (type === 'brain') {
+        userData.insurances[type].scope = document.getElementById('ins-brain-scope').value;
+        userData.insurances[type].until = parseInt(document.getElementById('ins-brain-until').value) || 0;
+      }
+      if (type === 'heart') {
+        userData.insurances[type].scope = document.getElementById('ins-heart-scope').value;
+        userData.insurances[type].until = parseInt(document.getElementById('ins-heart-until').value) || 0;
+      }
+      if (type === 'life') {
+        userData.insurances[type].lifeType = document.getElementById('ins-life-type').value;
+        userData.insurances[type].until = parseInt(document.getElementById('ins-life-until').value) || 0;
+      }
+    });
+    userData.totalInsuranceFee = Object.values(userData.insurances).reduce((s,i) => s + (i.status === '가입' ? i.fee : 0), 0) * 10000;
+    userData.health = Array.from(document.querySelectorAll('input[name="health"]:checked')).map(e => e.value);
+  }
+}
+
+function resetForm() {
+  if (confirm('입력한 모든 정보가 사라집니다. 다시 시작하시겠습니까?')) {
+    document.getElementById('introScreen').style.display = 'block';
+    document.getElementById('reportScreen').classList.remove('active');
+    currentStep = 1;
+    userData = {};
+    insStatuses = { cancer: '', brain: '', heart: '', life: '' };
+    document.querySelectorAll('input').forEach(i => { if (i.type !== 'button') i.value = ''; if (i.type === 'checkbox' || i.type === 'radio') i.checked = false; });
+    document.querySelectorAll('select').forEach(s => s.selectedIndex = 0);
+    document.querySelectorAll('.sub-section').forEach(s => s.classList.remove('show'));
+    document.querySelectorAll('.asset-detail').forEach(s => s.classList.remove('show'));
+    document.querySelectorAll('.ins-product-block').forEach(b => b.setAttribute('data-status', ''));
+    showStep(1);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function calculateCategoryScores(data) {
+  // 5개 카테고리별 0-100점
+  let scores = { retirement: 0, insurance: 0, welldying: 0, legacy: 0, cashflow: 0 };
+
+  // 1. 은퇴 자금 준비도
+  let r = 30;
+  if (data.hasPension === '있음') r += 20;
+  if (data.retirement >= 10000) r += 25;
+  else if (data.retirement >= 5000) r += 15;
+  else if (data.retirement >= 1000) r += 8;
+  if (data.monthlyInvest >= 100) r += 15;
+  else if (data.monthlyInvest >= 50) r += 10;
+  else if (data.monthlyInvest >= 30) r += 5;
+  if (data.assets.length >= 3) r += 10;
+  else if (data.assets.length >= 2) r += 5;
+  scores.retirement = Math.min(95, Math.max(15, r));
+
+  // 2. 보험 보장 충실도
+  let i = 20;
+  const insurances = data.insurances || {};
+  ['cancer','brain','heart'].forEach(t => {
+    if (insurances[t] && insurances[t].status === '가입') {
+      if (insurances[t].amt >= 5000) i += 18;
+      else if (insurances[t].amt >= 3000) i += 12;
+      else i += 6;
+    } else if (insurances[t] && insurances[t].status === '미가입') i -= 4;
+    else if (insurances[t] && insurances[t].status === '모름') i += 2;
+  });
+  if (insurances.life && insurances.life.status === '가입') i += 12;
+  // 보험료 비율 적정성
+  const ratio = parseFloat(data.insuranceRatio || 0);
+  if (ratio > 0 && ratio <= 10) i += 8;
+  else if (ratio > 10) i -= 5;
+  scores.insurance = Math.min(95, Math.max(15, i));
+
+  // 3. 웰다잉 준비도
+  let w = 25;
+  const wd = data.welldying || [];
+  if (wd.length >= 3) w += 40;
+  else if (wd.length >= 2) w += 25;
+  else if (wd.length >= 1) w += 12;
+  if (data.age >= 60) w += 10; // 연령대 고려
+  scores.welldying = Math.min(95, Math.max(15, w));
+
+  // 4. 상속·증여 설계
+  let l = 30;
+  if (data.marriage === '기혼') l += 15;
+  if (data.children > 0) l += 15;
+  if (data.inheritance && data.inheritance !== '없음') l += 10;
+  if (data.totalAssets > 50000) l += 15; // 5억 이상이면 상속 준비 필요성 높음
+  else if (data.totalAssets > 30000) l += 8;
+  if (data.hasPension === '있음') l += 8; // 수익자 지정 가능
+  scores.legacy = Math.min(95, Math.max(15, l));
+
+  // 5. 현금흐름 안정성
+  let c = 30;
+  if (data.salary >= 7000) c += 20;
+  else if (data.salary >= 5500) c += 15;
+  else if (data.salary >= 3000) c += 8;
+  if (data.assets.includes('예적금')) c += 12;
+  if (data.assets.includes('자가주택')) c += 10;
+  if (data.monthlyInvest >= 50) c += 12;
+  else if (data.monthlyInvest >= 30) c += 6;
+  if (data.job === '직장인' && data.jobYears === '10년 이상') c += 8;
+  scores.cashflow = Math.min(95, Math.max(15, c));
+
+  return scores;
+}
+
+function calculateScore() {
+  let score = 50;
+  if (userData.hasPension === '있음') score += 8;
+  if (userData.retirement >= 5000) score += 8;
+  else if (userData.retirement >= 1000) score += 4;
+  if (userData.monthlyInvest >= 75) score += 8;
+  else if (userData.monthlyInvest >= 50) score += 4;
+  if (userData.assets.length >= 3) score += 6;
+  else if (userData.assets.length >= 2) score += 3;
+
+  // 3대 질환 + 생명보험 보장 점수
+  const insurances = userData.insurances;
+  let insScore = 0;
+  ['cancer','brain','heart'].forEach(t => {
+    if (insurances[t].status === '가입' && insurances[t].amt >= 3000) insScore += 3;
+    else if (insurances[t].status === '미가입') insScore -= 2;
+  });
+  if (insurances.life.status === '가입') insScore += 2;
+  score += insScore;
+
+  if (userData.age >= 55 && (userData.retirement < 5000 || userData.hasPension === '없음')) score -= 8;
+  if (userData.health.length > 0 && !userData.health.includes('없음')) {
+    const healthInsCovered = userData.health.some(h => {
+      const map = {뇌혈관:'brain', 심혈관:'heart', 암:'cancer'};
+      return map[h] && insurances[map[h]] && insurances[map[h]].status === '가입';
+    });
+    if (healthInsCovered) score += 4;
+    else score -= 4;
+  }
+  return Math.max(20, Math.min(95, score));
+}
+
+function generateReport() {
+  userData.marriage = document.querySelector('input[name="marriage"]:checked')?.value || '미입력';
+  userData.children = parseInt(document.getElementById('children').value) || 0;
+  userData.inheritance = document.querySelector('input[name="inheritance"]:checked')?.value || '없음';
+  userData.welldying = Array.from(document.querySelectorAll('input[name="welldying"]:checked')).map(e => e.value);
+
+  userData.targetExpense = Math.round(userData.monthlyExpense * 0.7);
+  userData.targetAsset = Math.round(userData.targetExpense * 12 * 25 / 10000);
+  userData.taxRate = userData.salary <= 5500 ? 16.5 : 13.2;
+  userData.yearsToRetire = Math.max(65 - userData.age, 0);
+  userData.monthlySalary = Math.round(userData.salary * 10000 / 12);
+  userData.insuranceRatio = userData.monthlySalary > 0 ? (userData.totalInsuranceFee / userData.monthlySalary * 100).toFixed(1) : 0;
+  userData.score = calculateScore();
+  userData.categoryScores = calculateCategoryScores(userData);
+  // What-If 시뮬레이션용 백업
+  userData.originalScore = userData.score;
+  userData.originalCategoryScores = {...userData.categoryScores};
+
+  document.getElementById('introScreen').style.display = 'none';
+  document.getElementById('reportScreen').classList.add('active');
+
+  document.getElementById('rScore').textContent = userData.score;
+  document.getElementById('rNameAge').textContent = userData.age + '세';
+  const circ = 534;
+  const fg = document.getElementById('scoreFgCircle');
+  setTimeout(() => {
+    fg.setAttribute('stroke-dasharray', `${(userData.score/100)*circ} ${circ}`);
+  }, 100);
+
+  let summaryText = '';
+  if (userData.score >= 75) {
+    summaryText = '훌륭한 준비 상태입니다. 디테일을 다듬어 완벽한 2막 1장을 만들어보세요.';
+  } else if (userData.score >= 55) {
+    summaryText = '기본기는 갖춰져 있지만 보완할 영역이 있습니다.<br>지금부터 절세 3총사를 활용하면 충분히 격차를 줄일 수 있습니다.';
+  } else {
+    summaryText = '아직 갈 길이 있지만 절대 늦지 않았습니다.<br>오늘부터 시작하면 ' + userData.yearsToRetire + '년 후 든든한 2막 1장이 가능합니다.';
+  }
+  document.getElementById('rSummary').innerHTML = summaryText;
+
+  const tags = [];
+  tags.push(`<span class="score-tag burgundy">${userData.age}세 · ${userData.gender}</span>`);
+  if (userData.job) tags.push(`<span class="score-tag">${userData.job}</span>`);
+  if (userData.yearsToRetire > 0) tags.push(`<span class="score-tag gold">은퇴까지 ${userData.yearsToRetire}년</span>`);
+  if (userData.health.length > 0 && !userData.health.includes('없음')) {
+    tags.push(`<span class="score-tag">가족력 대비</span>`);
+  }
+  document.getElementById('rTags').innerHTML = tags.join('');
+
+  renderRetire();
+  renderInsurance();
+  renderWellDying();
+  renderLegacy();
+  renderSimulation();
+  renderChecklist();
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderRetire() {
+  const annualRefund = ((600 * userData.taxRate / 100) + (300 * userData.taxRate / 100)).toFixed(1);
+  const refundOver10 = (annualRefund * 10).toFixed(0);
+  const yl = userData.yearsToRetire;
+
+  // 개인연금 정보
+  let pensionDesc = '최우선 개설 대상 — 세제혜택 ' + userData.taxRate + '%';
+  let pensionStatus = `<span class="badge burgundy">미가입</span>`;
+  if (userData.hasPension === '있음') {
+    pensionDesc = `${userData.pensionType || '미입력'} · 월 ${userData.pensionMonthly || '?'}만원 · ${userData.pensionPeriod || '?'} 가입`;
+    pensionStatus = `<span class="badge green">진행중</span>`;
+  }
+
+  // 자산 요약
+  let assetSummary = '';
+  if (userData.assets.length > 0) {
+    const parts = [];
+    if (userData.assetHomeValue) parts.push(`자가주택 ${userData.assetHomeValue}억`);
+    if (userData.assetSavingValue) parts.push(`예적금 ${(userData.assetSavingValue/10000).toFixed(1)}억`);
+    if (userData.assetStockValue) parts.push(`주식·펀드 ${(userData.assetStockValue/10000).toFixed(1)}억`);
+    if (userData.assetEstateValue) parts.push(`투자부동산 ${userData.assetEstateValue}억`);
+    assetSummary = parts.length > 0 ? `<div class="content-card" style="background:var(--green-bg);padding:16px 20px;margin-bottom:24px;"><div style="font-size:12px;color:var(--muted);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">현재 보유 자산</div><div style="font-family:'Noto Serif KR',serif;font-size:16px;font-weight:600;color:var(--green-deep);">${parts.join(' · ')}</div></div>` : '';
+  }
+
+  document.getElementById('panel-retire').innerHTML = `
+    ${renderSpiderChart()}
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-eyebrow green">Chapter 1 · 은퇴 자금</span>
+        <h2 class="section-title">은퇴 자금, <em>역산해서</em> 시작하세요</h2>
+        <p class="section-desc">${userData.age}세에 시작하는 절세 3총사 — 연금저축, IRP, ISA. ${yl}년의 시간이면 충분합니다.</p>
+      </div>
+
+      ${assetSummary}
+
+      <div class="metric-grid">
+        <div class="metric-card">
+          <div class="icon">💵</div>
+          <div class="label">목표 월 생활비</div>
+          <div class="value burgundy">${userData.targetExpense}<span class="unit">만원</span></div>
+          <div class="desc">현재 ${userData.monthlyExpense}만 × 70% 법칙</div>
+        </div>
+        <div class="metric-card">
+          <div class="icon green">🎯</div>
+          <div class="label">필요 총자산</div>
+          <div class="value">${userData.targetAsset}<span class="unit">억원</span></div>
+          <div class="desc">25배 법칙 (연 4% 인출 전략)</div>
+        </div>
+        <div class="metric-card">
+          <div class="icon gold">🏁</div>
+          <div class="label">실제 준비 목표</div>
+          <div class="value gold">~${Math.max(userData.targetAsset - 2, 1)}<span class="unit">억원</span></div>
+          <div class="desc">국민연금 차감 후 실제 준비액</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-eyebrow">절세 3총사</span>
+        <h2 class="section-title">월 75만원으로<br><em>연 ${annualRefund}만원</em> 환급받기</h2>
+      </div>
+
+      <div class="content-card" style="padding:0;">
+        <table class="modern-table">
+          <thead><tr><th>계좌</th><th style="text-align:right;">월 납입</th><th style="text-align:right;">연 한도</th><th style="text-align:right;">세액공제 (${userData.taxRate}%)</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><div class="row-name">연금저축펀드 <span class="badge burgundy" style="margin-left:8px;">최우선</span></div><div class="row-desc">증권사 비대면 개설 · ETF 자유 운용</div></td>
+              <td class="num">50만원</td><td class="num">600만원</td>
+              <td class="num burgundy">${(600 * userData.taxRate / 100).toFixed(1)}만원</td>
+            </tr>
+            <tr>
+              <td><div class="row-name">IRP (개인형 퇴직연금)</div><div class="row-desc">30% 안전자산 의무 · 직장인 가입</div></td>
+              <td class="num">25만원</td><td class="num">300만원</td>
+              <td class="num burgundy">${(300 * userData.taxRate / 100).toFixed(1)}만원</td>
+            </tr>
+            <tr>
+              <td><div class="row-name">ISA (중개형)</div><div class="row-desc">3년 후 연금저축 환승 전략</div></td>
+              <td class="num" style="font-size:13px;color:var(--muted);">여유자금</td>
+              <td class="num">2,000만원</td>
+              <td class="num" style="font-size:13px;color:var(--muted);">3년 후 +300만</td>
+            </tr>
+            <tr class="highlight">
+              <td><div class="row-name">합산 혜택</div></td>
+              <td class="num">월 75만원~</td>
+              <td class="num">연 900만원</td>
+              <td class="num burgundy">${annualRefund}만원</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="insight">
+        <div class="insight-label">★ <span class="label-ko">2막1장 Insight</span></div>
+        <div class="insight-text">10년 누적 세액공제 환급액만 <strong>${refundOver10}만원</strong>.<br>이는 투자 수익이 아닌, 정부가 보장하는 확정 환급분입니다.</div>
+        <div class="insight-sub">투자 시작 전부터 이미 수익이 확정되는 구조. ${userData.age}세에 시작해도 결코 늦지 않습니다.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-eyebrow gold">연금 5층 탑</span>
+        <h2 class="section-title">당신의 <em>연금 다층 구조</em></h2>
+      </div>
+
+      <div class="content-card" style="padding:0;">
+        <table class="modern-table">
+          <thead><tr><th style="width:60px;">층</th><th>구분</th><th>현황</th><th style="text-align:right;width:100px;">상태</th></tr></thead>
+          <tbody>
+            <tr><td><span style="font-family:'Fraunces',serif;font-size:20px;color:var(--burgundy);font-weight:600;">5층</span></td><td><div class="row-name">주택연금</div></td><td>${userData.assets.includes('자가주택') ? `자가주택 ${userData.assetHomeValue || '?'}억 보유 — 60세 이후 활용 가능` : '자가주택 미보유 — 해당 없음'}</td><td style="text-align:right;"><span class="badge ${userData.assets.includes('자가주택') ? 'green' : 'gray'}">${userData.assets.includes('자가주택') ? '활용가능' : '해당없음'}</span></td></tr>
+            <tr><td><span style="font-family:'Fraunces',serif;font-size:20px;color:var(--burgundy);font-weight:600;">4층</span></td><td><div class="row-name">ISA + 금융자산</div></td><td>절세계좌 — 즉시 개설 권장</td><td style="text-align:right;"><span class="badge burgundy">미가입</span></td></tr>
+            <tr><td><span style="font-family:'Fraunces',serif;font-size:20px;color:var(--burgundy);font-weight:600;">3층</span></td><td><div class="row-name">개인연금</div></td><td>${pensionDesc}</td><td style="text-align:right;">${pensionStatus}</td></tr>
+            <tr><td><span style="font-family:'Fraunces',serif;font-size:20px;color:var(--burgundy);font-weight:600;">2층</span></td><td><div class="row-name">퇴직연금 (IRP)</div></td><td>${userData.retirement === 0 ? '제로베이스 — 신규 적립 시작 필요' : '기존 ' + (userData.retirement/10000).toFixed(1) + '억 보유'}</td><td style="text-align:right;"><span class="badge ${userData.retirement === 0 ? 'burgundy' : 'green'}">${userData.retirement === 0 ? '제로' : '진행중'}</span></td></tr>
+            <tr><td><span style="font-family:'Fraunces',serif;font-size:20px;color:var(--burgundy);font-weight:600;">1층</span></td><td><div class="row-name">국민연금</div></td><td>${userData.job === '직장인' ? '자동 납입 중 · 예상 수령액 조회 필수' : userData.job === '자영업' ? '지역가입 — 임의 가입 검토' : '확인 필요'}</td><td style="text-align:right;"><span class="badge ${userData.job === '직장인' ? 'green' : 'gold'}">${userData.job === '직장인' ? '진행중' : '확인필요'}</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  `;
+}
+
+function renderInsurance() {
+  const ins = userData.insurances;
+  const types = [
+    { key:'cancer', name:'암보험', icon:'🎗️', recommendAmt:5000, label:'암 진단금' },
+    { key:'brain', name:'뇌혈관질환 보험', icon:'🧠', recommendAmt:3000, label:'뇌혈관 진단금' },
+    { key:'heart', name:'심혈관질환 보험', icon:'❤️', recommendAmt:2000, label:'심혈관 진단금' },
+    { key:'life', name:'생명보험', icon:'🌳', recommendAmt:30000, label:'사망보험금' }
+  ];
+
+  const totalFee = userData.totalInsuranceFee;
+  const isOverPaying = userData.salary > 0 && parseFloat(userData.insuranceRatio) > 10;
+
+  // 상태별 카운트
+  const counts = { '가입':0, '미가입':0, '모름':0, '미입력':0 };
+  Object.values(ins).forEach(i => { counts[i.status || '미입력']++; });
+
+  let insRows = types.map(t => {
+    const data = ins[t.key];
+    const status = data.status || '미입력';
+    let badge = '';
+    let feeText = '';
+    let amtText = '';
+
+    if (status === '가입') {
+      badge = `<span class="badge ${data.amt >= t.recommendAmt ? 'green' : 'gold'}">${data.amt >= t.recommendAmt ? '적정' : '부족'}</span>`;
+      feeText = data.fee ? `월 ${data.fee}만원` : '-';
+      amtText = data.amt ? (data.amt >= 10000 ? (data.amt/10000).toFixed(1)+'억' : data.amt.toLocaleString()+'만') : '-';
+    } else if (status === '미가입') {
+      badge = `<span class="badge burgundy">미가입</span>`;
+      feeText = '-';
+      amtText = '-';
+    } else if (status === '모름') {
+      badge = `<span class="badge gray">확인필요</span>`;
+      feeText = '잘 모름';
+      amtText = '-';
+    } else {
+      badge = `<span class="badge gray">미입력</span>`;
+      feeText = '-';
+      amtText = '-';
+    }
+
+    return `
+      <div class="ins-row">
+        <div>
+          <div class="name">${t.icon} ${t.name}</div>
+          <div class="meta">${t.label} 권장: ${t.recommendAmt >= 10000 ? (t.recommendAmt/10000)+'억' : t.recommendAmt+'만'}원 이상${data.until ? ' · ' + data.until + '세까지' : ''}</div>
+        </div>
+        <div class="fee ${status === '가입' ? '' : 'gray'}">${feeText}</div>
+        <div class="judge">${badge}</div>
+      </div>
+    `;
+  }).join('');
+
+  document.getElementById('panel-insurance').innerHTML = `
+    <div class="section">
+      <div class="section-header">
+        <span class="section-eyebrow burgundy">Chapter 2 · 보험 진단</span>
+        <h2 class="section-title">3대 질환 + 생명보험 <em>종합 진단</em></h2>
+        <p class="section-desc">암 · 뇌혈관 · 심혈관 + 생명보험 4개 영역 — 65세 이전 발병 시 연금 납입이 중단되지 않도록 보장 점검이 필수입니다.</p>
+      </div>
+
+      <div class="metric-grid">
+        <div class="metric-card">
+          <div class="icon ${counts['가입'] >= 3 ? 'green' : ''}">🛡️</div>
+          <div class="label">3대 질환 + 생명보험</div>
+          <div class="value ${counts['가입'] >= 3 ? '' : 'burgundy'}">${counts['가입']}<span class="unit"> / 4 가입</span></div>
+          <div class="desc">${counts['미가입'] > 0 ? counts['미가입']+'건 미가입 · ' : ''}${counts['모름'] > 0 ? counts['모름']+'건 확인필요' : '4개 영역 점검 완료'}</div>
+        </div>
+        <div class="metric-card">
+          <div class="icon ${isOverPaying ? '' : 'green'}">💸</div>
+          <div class="label">월 보험료 합계</div>
+          <div class="value ${isOverPaying ? 'warn' : ''}">${(totalFee/10000).toFixed(1)}<span class="unit">만원</span></div>
+          <div class="desc">${userData.salary > 0 ? '월 소득 대비 ' + userData.insuranceRatio + '%' : '소득 미입력'}</div>
+        </div>
+        <div class="metric-card">
+          <div class="icon gold">📊</div>
+          <div class="label">소득 대비 비율</div>
+          <div class="value ${isOverPaying ? 'warn' : 'gold'}">${userData.insuranceRatio}<span class="unit">%</span></div>
+          <div class="desc">${isOverPaying ? '권장치(10%) 초과' : '적정 범위'}</div>
+        </div>
+      </div>
+
+      ${counts['미가입'] >= 2 ? `
+      <div class="insight burgundy">
+        <div class="insight-label">⚠️ <span class="label-ko">2막1장 Insight</span></div>
+        <div class="insight-text">3대 질환 보장 중 <strong>${counts['미가입']}건이 미가입</strong> 상태입니다.<br>발병 시 연금 납입이 중단되어 노후 재무가 흔들릴 수 있습니다.</div>
+        <div class="insight-sub">암·뇌혈관·심혈관 진단비는 노후 준비의 방패입니다. 미가입 상태라면 가입을 우선 검토하세요.</div>
+      </div>
+      ` : ''}
+
+      ${counts['모름'] > 0 ? `
+      <div class="insight cream">
+        <div class="insight-label">📋 <span class="label-ko">2막1장 Insight</span></div>
+        <div class="insight-text"><strong>${counts['모름']}건의 보험을 정확히 확인하지 못하셨습니다</strong>.<br>'내보험 다보여' 앱으로 한 번에 조회 가능합니다.</div>
+        <div class="insight-sub">생명보험협회·손해보험협회 공동 운영 · 무료 통합 조회 서비스</div>
+      </div>
+      ` : ''}
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-eyebrow">개별 보장 진단</span>
+        <h2 class="section-title">보장 항목별 <em>점검 결과</em></h2>
+      </div>
+      <div class="ins-list">${insRows}</div>
+    </div>
+
+    ${renderHealthRecommendations()}
+  `;
+}
+
+function renderHealthRecommendations() {
+  const hasHealth = userData.health && userData.health.length > 0 && !userData.health.includes('없음');
+  if (!hasHealth) return '';
+
+  const healthMap = {
+    '뇌혈관': { name: '뇌혈관질환 진단비', amount: '3,000~5,000만', insKey: 'brain' },
+    '심혈관': { name: '허혈성심장질환 진단비', amount: '2,000~3,000만', insKey: 'heart' },
+    '암': { name: '암 진단비', amount: '5,000만~1억', insKey: 'cancer' },
+    '당뇨': { name: '당뇨 합병증·진단비', amount: '1,000~3,000만', insKey: null }
+  };
+
+  let rows = userData.health.filter(h => h !== '없음').map(h => {
+    const m = healthMap[h];
+    let coverStatus = '확인 필요';
+    if (m.insKey && userData.insurances[m.insKey]) {
+      const data = userData.insurances[m.insKey];
+      if (data.status === '가입') {
+        coverStatus = data.amt >= 3000 ? `<span class="badge green">충분</span>` : `<span class="badge gold">부족</span>`;
+      } else if (data.status === '미가입') {
+        coverStatus = `<span class="badge burgundy">미가입</span>`;
+      }
+    }
+    return `
+      <tr>
+        <td><div class="row-name">${m.name}</div><div class="row-desc">가족력 대비 우선 점검</div></td>
+        <td class="num burgundy">${m.amount}</td>
+        <td>${coverStatus}</td>
+      </tr>
+    `;
+  }).join('');
+
+  return `
+    <div class="section">
+      <div class="section-header">
+        <span class="section-eyebrow gold">가족력 대비</span>
+        <h2 class="section-title">권장 보장 vs <em>현재 상태</em></h2>
+      </div>
+      <div class="content-card" style="padding:0;">
+        <table class="modern-table">
+          <thead><tr><th>보장 항목</th><th style="text-align:right;">권장 보장금액</th><th>현재 상태</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <div class="insight">
+        <div class="insight-label">★ <span class="label-ko">2막1장 Insight</span></div>
+        <div class="insight-text">65세 이전에 큰 병이 발생할 경우<br><strong>연금 납입이 중단되어 노후 재무 전체가 흔들릴 수 있습니다</strong>.</div>
+        <div class="insight-sub">보험은 노후 준비의 방패입니다. 보험료 절감만이 목적이 아니라, 같은 비용으로 더 효율적인 보장 구조를 만드는 것이 핵심입니다.</div>
+      </div>
+    </div>
+  `;
+}
+
+function renderWellDying() {
+  document.getElementById('panel-welldying').innerHTML = `
+    <div class="section">
+      <div class="section-header">
+        <span class="section-eyebrow burgundy">Chapter 3 · 웰다잉</span>
+        <h2 class="section-title">존엄한 마무리, <em>스스로 설계하기</em></h2>
+        <p class="section-desc">사전연명의료의향서, 상조, 임종 메모 — 마지막 순간까지 스스로 결정할 권리를 지키는 일입니다.</p>
+      </div>
+
+      <div class="card-grid" style="grid-template-columns: repeat(3, 1fr); gap: 16px;">
+        <div class="info-card">
+          <div class="num">— I —</div>
+          <h4>사전연명의료의향서</h4>
+          <p>19세 이상 누구나 보건소 방문, 무료, 15분이면 작성 가능한 <strong>법적 효력 문서</strong>.</p>
+        </div>
+        <div class="info-card">
+          <div class="num">— II —</div>
+          <h4>상조 가입</h4>
+          <p>월 2~3만원 × 10년 = 가족의 부담을 사전 차단. <strong>선수금 보전 100% 업체</strong> 권장.</p>
+        </div>
+        <div class="info-card">
+          <div class="num">— III —</div>
+          <h4>유언장 작성</h4>
+          <p>자필 또는 공증 유언장. <strong>재산·장례·디지털 유산</strong>까지 포함.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-eyebrow gold">2026년 상조 업체 비교</span>
+        <h2 class="section-title">상조 업체 <em>비교 분석</em></h2>
+      </div>
+
+      <div class="content-card" style="padding:0;">
+        <table class="modern-table">
+          <thead><tr><th>업체</th><th>특징</th><th style="text-align:right;width:120px;">선수금 보전</th></tr></thead>
+          <tbody>
+            <tr><td><div class="row-name">교원라이프</div><div class="row-desc">2026 브랜드평판 1위 · 직영 장례식장 8곳</div></td><td>상조+장례식장 원스톱</td><td style="text-align:right;"><span class="badge green">100%</span></td></tr>
+            <tr><td><div class="row-name">웅진프리드라이프</div><div class="row-desc">선수금·자산 1위 (2조원+)</div></td><td>웅진 편입 후 신상품 라인업</td><td style="text-align:right;"><span class="badge green">100%</span></td></tr>
+            <tr><td><div class="row-name">고이 (후불제)</div><div class="row-desc">월 100원 가입 · 정찰제</div></td><td>사용한 품목만 실비 청구</td><td style="text-align:right;"><span class="badge burgundy">후불제</span></td></tr>
+            <tr><td><div class="row-name">대명아임레디</div><div class="row-desc">대명소노그룹 · 업계 3위</div></td><td>가전 결합 상품 다수</td><td style="text-align:right;"><span class="badge green">100%</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="insight">
+        <div class="insight-label">★ <span class="label-ko">2막1장 Insight</span></div>
+        <div class="insight-text">웰다잉은 죽음의 준비가 아니라,<br>마지막 순간까지 <strong>스스로 결정할 권리</strong>를 지키는 일입니다.</div>
+      </div>
+    </div>
+  `;
+}
+
+function renderLegacy() {
+  const hasSpouse = userData.marriage === '기혼';
+  const hasChildren = userData.children > 0;
+  const inheritanceText = {
+    '없음': '추가 상속 재산 없음 — 남기는 상속 중심으로',
+    '소액': '1억 이하 상속 예상 — 큰 영향 없음',
+    '중간': '5억 이하 상속 가능 — 세무 검토 필요',
+    '대규모': '10억 이상 상속 예상 — 사전 세무 컨설팅 필수'
+  };
+
+  document.getElementById('panel-legacy').innerHTML = `
+    <div class="section">
+      <div class="section-header">
+        <span class="section-eyebrow">Chapter 4 · 상속 설계</span>
+        <h2 class="section-title">남기는 <em>유산의 설계</em></h2>
+        <p class="section-desc">${inheritanceText[userData.inheritance]} — 증여공제와 유언장으로 내 뜻을 미리 새겨두기.</p>
+      </div>
+
+      <div class="content-card" style="padding:0;">
+        <table class="modern-table">
+          <thead><tr><th>공제 항목</th><th>금액 / 조건</th></tr></thead>
+          <tbody>
+            <tr><td class="row-name">기초공제</td><td>2억원 — 누구에게나 기본 적용</td></tr>
+            <tr><td class="row-name">배우자 공제</td><td><strong style="color:var(--burgundy);">최소 5억 ~ 최대 30억원</strong> ${hasSpouse ? '(적용 가능)' : '(해당 없음)'}</td></tr>
+            <tr><td class="row-name">자녀 인적공제</td><td>자녀 1인당 5,000만원 ${hasChildren ? `(${userData.children}명 = ${userData.children * 5000}만)` : '(해당 없음)'}</td></tr>
+            <tr><td class="row-name">일괄공제</td><td>5억원 (선택 적용)</td></tr>
+            <tr class="highlight"><td class="row-name">실질 면세 구간</td><td><strong style="color:var(--burgundy);">${hasSpouse && hasChildren ? '배우자+자녀 — 10억원 이하 상속세 0원' : hasSpouse ? '배우자만 — 5억원 이하 상속세 0원' : '일괄공제 5억원 적용'}</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-eyebrow green">증여세 공제 (10년)</span>
+        <h2 class="section-title">증여세 공제 한도</h2>
+      </div>
+
+      <div class="metric-grid">
+        <div class="metric-card">
+          <div class="icon">💑</div>
+          <div class="label">배우자 증여 공제</div>
+          <div class="value ${hasSpouse ? 'burgundy' : ''}">6<span class="unit">억원</span></div>
+          <div class="desc">10년 합산 한도 · ${hasSpouse ? '활용 가능' : '해당 없음'}</div>
+        </div>
+        <div class="metric-card">
+          <div class="icon green">👶</div>
+          <div class="label">자녀 증여 공제</div>
+          <div class="value ${hasChildren ? '' : ''}">5,000<span class="unit">만원</span></div>
+          <div class="desc">성인 자녀 1인당 · ${hasChildren ? userData.children + '명 × 5천 = ' + (userData.children * 5000) + '만 가능' : '해당 없음'}</div>
+        </div>
+        <div class="metric-card">
+          <div class="icon gold">🔄</div>
+          <div class="label">증여 사이클</div>
+          <div class="value gold">10<span class="unit">년</span></div>
+          <div class="desc">증여공제 주기 · 일찍 시작할수록 효과 큼</div>
+        </div>
+      </div>
+
+      ${hasChildren ? `
+      <div class="insight">
+        <div class="insight-label">★ <span class="label-ko">2막1장 Insight</span></div>
+        <div class="insight-text"><strong>${userData.age}세부터 시작하면</strong><br>${userData.age}세 → ${userData.age+10}세 → ${userData.age+20}세 = 자녀 1인당 총 <strong>1.5억원</strong>을 세금 없이 이전 가능.</div>
+        <div class="insight-sub">${userData.children}명 자녀 기준 총 <strong>${userData.children * 1.5}억원</strong> 절세 가능합니다.</div>
+      </div>
+      ` : ''}
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-eyebrow gold">핵심 전략</span>
+        <h2 class="section-title">내 뜻대로 남기는 <em>4가지 방법</em></h2>
+      </div>
+
+      <div class="card-grid">
+        ${hasChildren ? `
+        <div class="info-card">
+          <div class="num">— I —</div>
+          <h4>조기 증여 시작</h4>
+          <p>10년 주기 증여공제 활용 → 자녀 1인당 <strong>${userData.age}→${userData.age+10}→${userData.age+20}세 = 총 1.5억</strong>을 세금 없이 이전 가능.</p>
+        </div>
+        ` : ''}
+        <div class="info-card">
+          <div class="num">— II —</div>
+          <h4>연금계좌 수익자 지정</h4>
+          <p>연금저축·IRP는 <strong>수익자 지정</strong> 가능. 사망 시 지정자에게 직접 이전돼 분쟁 없이 신속 처리.</p>
+        </div>
+        <div class="info-card">
+          <div class="num">— III —</div>
+          <h4>유언장 작성</h4>
+          <p>자필 유언장도 효력 인정. 분쟁 우려 시 <strong>공증 유언장 (10~30만)</strong>. 디지털 유산 처리도 포함.</p>
+        </div>
+        <div class="info-card">
+          <div class="num">— IV —</div>
+          <h4>생명보험 활용</h4>
+          <p>사망보험금은 수익자 지정 시 <strong>상속재산과 별도</strong> 처리 가능. 상속세 재원으로도 활용.</p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderChecklist() {
+  const ins = userData.insurances;
+  const hasUnknown = Object.values(ins).some(i => i.status === '모름');
+  const hasUninsured = Object.values(ins).some(i => i.status === '미가입');
+  const isOverPaying = userData.salary > 0 && parseFloat(userData.insuranceRatio) > 10;
+  const wantsCho = userData.welldying.includes('상조');
+  const wantsLST = userData.welldying.includes('연명의료');
+  const wantsWill = userData.welldying.includes('유언장');
+  const hasChildren = userData.children > 0;
+  const hasHealthIssue = userData.health.length > 0 && !userData.health.includes('없음');
+
+  document.getElementById('panel-checklist').innerHTML = `
+    <div class="section">
+      <div class="section-header">
+        <span class="section-eyebrow gold">Chapter 5 · 실행 계획</span>
+        <h2 class="section-title">2막 1장 <em>로드맵</em></h2>
+        <p class="section-desc">${userData.age}세부터 65세까지 — 단계별로 따라가기만 하면 됩니다.</p>
+      </div>
+
+      <div class="timeline-modern">
+        <div class="tl-grid">
+          <div class="tl-point now">
+            <div class="age">${userData.age}</div>
+            <div class="label">Now · 현재</div>
+            <div class="desc">절세계좌 개설<br>보험 점검</div>
+          </div>
+          <div class="tl-point">
+            <div class="age">${Math.min(userData.age + 3, 55)}</div>
+            <div class="label">+3년</div>
+            <div class="desc">연금 수령 가능<br>상조 완비</div>
+          </div>
+          <div class="tl-point">
+            <div class="age">${Math.min(userData.age + 8, 60)}</div>
+            <div class="label">+8년</div>
+            <div class="desc">주택연금 검토<br>유언장 갱신</div>
+          </div>
+          <div class="tl-point">
+            <div class="age">65</div>
+            <div class="label">은퇴</div>
+            <div class="desc">국민연금 개시<br>완전 은퇴</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="checklist-block">
+        <div class="checklist-head">
+          <div class="num">I</div>
+          <div class="title">오늘 안에 — 30분</div>
+          <div class="when">Today</div>
+        </div>
+        <div class="check-card">
+          <div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong>은퇴</strong>국민연금공단 앱 → 예상 수령액 조회 및 스크린샷 보관</div></div>
+          <div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong>은퇴</strong>증권사 앱(미래에셋·삼성·키움 등) → 연금저축펀드 비대면 개설 (10분)</div></div>
+          <div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong>은퇴</strong>월 ${Math.min(userData.monthlyInvest, 50)}만원 자동이체 설정</div></div>
+          ${hasUnknown ? `<div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong class="gold-tag">보험</strong>'내보험 다보여' 앱 설치 → 모든 보험 가입 내역 통합 조회</div></div>` : ''}
+        </div>
+      </div>
+
+      <div class="checklist-block">
+        <div class="checklist-head">
+          <div class="num gold">II</div>
+          <div class="title">이번 주 안에 — 7일</div>
+          <div class="when">This Week</div>
+        </div>
+        <div class="check-card">
+          <div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong>은퇴</strong>ISA 중개형 계좌 개설 — 평생 수수료 우대 (2026.12까지)</div></div>
+          ${userData.job === '직장인' ? `<div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong>은퇴</strong>IRP 개인 계좌 개설 + 월 25만원 자동이체</div></div>` : ''}
+          ${hasUninsured ? `<div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong class="gold-tag">보험</strong>3대 질환 미가입 항목 — 보험료 견적 비교 (3사 이상)</div></div>` : ''}
+          ${isOverPaying ? `<div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong class="gold-tag">보험</strong>독립 보험설계사 또는 무료 보험점검 서비스 신청 (마이리얼플랜 등)</div></div>` : ''}
+          ${hasHealthIssue ? `<div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong class="gold-tag">보험</strong>${userData.health.filter(h=>h!=='없음').join('·')} 진단비 보장금액·범위 약관 확인</div></div>` : ''}
+          ${wantsCho ? `<div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong class="cream-tag">웰다잉</strong>상조 업체 2~3곳 비교 — 교원라이프, 웅진프리드, 고이</div></div>` : ''}
+          <div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong class="burgundy-tag">상속</strong>연금저축·IRP 수익자(수혜자) 지정 확인</div></div>
+        </div>
+      </div>
+
+      <div class="checklist-block">
+        <div class="checklist-head">
+          <div class="num green">III</div>
+          <div class="title">이번 달 안에 — 30일</div>
+          <div class="when">This Month</div>
+        </div>
+        <div class="check-card">
+          <div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong>은퇴</strong>연금저축·IRP 내 ETF 구성 — 미국S&P500 60% + 미국채10년 40%</div></div>
+          ${isOverPaying ? `<div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong class="gold-tag">보험</strong>중복 보장 정리 — 보험료 30~40만원대로 정상화 검토</div></div>` : ''}
+          ${hasHealthIssue ? `<div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong class="gold-tag">보험</strong>가족력 진단비 부족 시 — 80~100세 비갱신형 보충 가입 검토</div></div>` : ''}
+          ${wantsLST ? `<div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong class="cream-tag">웰다잉</strong>가까운 보건소 방문 → 사전연명의료의향서 작성 (신분증 지참, 무료)</div></div>` : ''}
+          ${wantsCho ? `<div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong class="cream-tag">웰다잉</strong>상조 최종 선택 및 가입 (선수금 보전 100% 업체)</div></div>` : ''}
+          <div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong class="burgundy-tag">상속</strong>현재 보유 자산 목록 작성 (부동산·금융자산·부채)</div></div>
+        </div>
+      </div>
+
+      <div class="checklist-block">
+        <div class="checklist-head">
+          <div class="num deep">IV</div>
+          <div class="title">3개월~1년 이내</div>
+          <div class="when">3-12 months</div>
+        </div>
+        <div class="check-card">
+          <div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong>은퇴</strong>퇴직금 IRP 수령 예약 — 다음 이직 시 반드시 IRP 이전 (세금 30~50%↓)</div></div>
+          ${wantsWill ? `<div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong class="burgundy-tag">상속</strong>자필 유언장 작성 — 재산 분배 + 장례 방식 + 디지털 유산</div></div>` : ''}
+          <div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong class="burgundy-tag">상속</strong>디지털 자산 목록 — 안전한 장소 보관 + 가족 1인에게 위치 공유</div></div>
+          ${hasChildren ? `<div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong class="burgundy-tag">상속</strong>자녀에게 소액 증여 시작 (10년 5,000만 한도 활용)</div></div>` : ''}
+          ${userData.assets.includes('자가주택') ? `<div class="check-line" onclick="this.classList.toggle('checked')"><div class="check-mark"></div><div class="check-text"><strong>은퇴</strong>주택연금 시뮬레이션 — 한국주택금융공사 홈페이지에서 미리 확인</div></div>` : ''}
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== INTERNAL EXPERT (PREMIUM) ===== -->
+    <div class="expert-section-divider">
+      <span>· Premium Service ·</span>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-eyebrow burgundy">Life 2.0 Premium</span>
+        <h2 class="section-title">실행이 막막하다면<br><em>2막1장 플래너</em>와 함께</h2>
+        <p class="section-desc">진단서가 가리킨 방향대로 직접 따라하기 어려우시다면, Life 2.0의 전담 플래너가 단계별로 함께합니다.</p>
+      </div>
+
+      <div class="premium-banner">
+        <div class="premium-eyebrow">
+          <span>★</span> Life 2.0 Premium · 전담 플래너
+        </div>
+        <h3>당신의 2막 1장,<br><em>전담 플래너가</em> 끝까지 함께합니다</h3>
+        <p>연금저축펀드 개설부터 ETF 포트폴리오 구성, 보험 점검과 상속 설계까지 — 진단서에 적힌 모든 실행 계획을 플래너가 1:1로 함께 진행해 드립니다.</p>
+
+        <div class="premium-features">
+          <div class="premium-feature">
+            <div class="premium-feature-icon">①</div>
+            <div class="premium-feature-text">
+              <strong>1:1 전담 플래너 배정</strong>
+              월 2회 정기 상담 · 카카오톡 상시 문의
+            </div>
+          </div>
+          <div class="premium-feature">
+            <div class="premium-feature-icon">②</div>
+            <div class="premium-feature-text">
+              <strong>맞춤 실행 가이드</strong>
+              계좌 개설부터 ETF 매수까지 단계별 지원
+            </div>
+          </div>
+          <div class="premium-feature">
+            <div class="premium-feature-icon">③</div>
+            <div class="premium-feature-text">
+              <strong>분기별 포트폴리오 리뷰</strong>
+              시장 변화 반영한 리밸런싱 제안
+            </div>
+          </div>
+          <div class="premium-feature">
+            <div class="premium-feature-icon">④</div>
+            <div class="premium-feature-text">
+              <strong>외부 전문가 우선 매칭</strong>
+              세무사·변호사 검증된 파트너 연결
+            </div>
+          </div>
+        </div>
+
+        <div class="gift-strip" style="background:rgba(255,255,255,0.12);border-color:var(--gold);">
+          <div class="gift-icon">🎁</div>
+          <div class="gift-text">
+            <div class="gift-text-label" style="color:var(--gold-soft);">신규 가입 특전</div>
+            <div class="gift-text-main" style="color:white;">
+              <strong style="color:var(--gold-soft);">2막1장 시작 키트 무료 발송</strong> · 연금 가이드북 + 보험 체크리스트<br>
+              <span style="font-size:12px;color:rgba(255,255,255,0.8);">+ 첫 한 달 무료 + 라이프 2.0 회원 전용 행사 우선 초대 + 분야별 전자책 제공</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="premium-cta">
+          <button class="btn-premium" onclick="openModal('modal-premium')">
+            상담 신청하기 →
+          </button>
+          <div class="premium-price">
+            <strong>₩9,900</strong>/월 (첫 한 달 무료)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== EXTERNAL EXPERT MATCH ===== -->
+    <div class="expert-section-divider">
+      <span>· Expert Network ·</span>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-eyebrow gold">External Expert Match</span>
+        <h2 class="section-title">맞춤형 솔루션 <em>전문가 TOP 3</em></h2>
+        <p class="section-desc">AI가 당신의 진단 결과를 분석해 가장 취약한 영역을 보완할 전문가 3분을 자동으로 매칭해드립니다.</p>
+      </div>
+
+      <div class="unified-match" id="unifiedMatch">
+        <div class="unified-match-eyebrow">
+          <span>✦</span> AI 맞춤 매칭 · LIVE
+        </div>
+        <h3 id="unifiedMatchTitle"><em id="unifiedMatchName">홍길동</em>님의 취약 코어 보완에<br>특화된 전문가를 엄선했습니다</h3>
+        <p class="intro" id="unifiedMatchIntro">5각 진단 결과 가장 보완이 필요한 영역을 기준으로, Life 2.0이 검증한 100여 명의 전문가 풀에서 자동 추천합니다.</p>
+
+        <div class="unified-expert-list" id="unifiedExpertList">
+          <!-- Dynamically populated -->
+        </div>
+
+        <button class="btn-unified-match" onclick="openModal('modal-expert')">
+          3명 모두에게 내 진단 리포트 보내기
+        </button>
+        <div class="unified-match-footer">
+          ★ 무료 · ★ 부담 없음 · ★ 24시간 내 연락
+        </div>
+      </div>
+
+      <div class="insight cream">
+        <div class="insight-label">📋 <span class="label-ko">2막1장 Insight</span></div>
+        <div class="insight-text">모든 외부 전문가는 <strong>Life 2.0의 검증 절차</strong>를 통과한 분들입니다.<br>자격증·경력·고객 후기·윤리 기준을 종합 평가합니다.</div>
+        <div class="insight-sub">최초 상담은 무료이며, Premium 회원은 우선 매칭 + 플래너 동행 상담 혜택이 제공됩니다.</div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">★ <span class="label-ko">2막1장 Insight</span></div>
+      <div class="insight-text">가장 좋은 시간은 십 년 전이고,<br>그 다음으로 좋은 시간은 <strong>지금</strong>입니다.</div>
+    </div>
+
+    <!-- ===== UPGRADE CTA - 정밀 진단 ===== -->
+    <div class="upgrade-cta">
+      <div class="upgrade-eyebrow">⚜ Life 2.0 Premium Membership</div>
+      <h3>이제 <em>당신의 실제 자산 데이터</em>로<br>정밀 진단을 받아보세요</h3>
+      <p>지금까지의 진단은 입력해주신 개략 정보를 기반으로 한 시뮬레이션입니다.<br>실제 보유 계좌·보험·부동산 데이터를 연동하면, 훨씬 정확하고 깊이 있는 맞춤 진단이 가능합니다.</p>
+
+      <div class="upgrade-features-grid">
+        <div class="upgrade-feature">
+          <div class="upgrade-feature-num">①</div>
+          <div class="upgrade-feature-text">
+            <strong>마이데이터 연동</strong>
+            은행·증권·보험 계좌 자동 통합 조회
+          </div>
+        </div>
+        <div class="upgrade-feature">
+          <div class="upgrade-feature-num">②</div>
+          <div class="upgrade-feature-text">
+            <strong>실시간 자산 변동 추적</strong>
+            매일 업데이트되는 5각 진단 점수
+          </div>
+        </div>
+        <div class="upgrade-feature">
+          <div class="upgrade-feature-num">③</div>
+          <div class="upgrade-feature-text">
+            <strong>2막1장 플래너 1:1 매칭</strong>
+            전담 플래너의 정밀 진단 리포트 발급
+          </div>
+        </div>
+        <div class="upgrade-feature">
+          <div class="upgrade-feature-num">④</div>
+          <div class="upgrade-feature-text">
+            <strong>외부 전문가 우선 연결</strong>
+            세무사·변호사 등 검증 전문가 즉시 매칭
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-upgrade" onclick="openModal('modal-premium')">
+        <span class="btn-upgrade-icon">⚜</span>
+        가입 후 자산데이터 정밀 진단받기
+      </button>
+
+      <div style="margin-top:16px;font-size:12px;color:rgba(74,124,58,0.8);">
+        ★ 첫 한 달 무료 · ★ <strong>₩9,900/월</strong> · ★ 언제든 해지 가능
+      </div>
+    </div>
+
+    <!-- ===== STARTER KIT SHOWCASE ===== -->
+    <div class="starter-kit">
+      <div class="starter-kit-header">
+        <div class="starter-kit-icon">🎁</div>
+        <div>
+          <div class="starter-kit-title">2막1장 시작 키트</div>
+          <div class="starter-kit-subtitle">Premium 가입 즉시 무료 발송</div>
+        </div>
+        <div class="starter-kit-badge">신규 특전</div>
+      </div>
+
+      <div class="starter-kit-grid">
+        <div class="starter-kit-item">
+          <div class="starter-kit-item-icon">📘</div>
+          <div class="starter-kit-item-text">
+            <div class="starter-kit-item-name">연금 전략 가이드북</div>
+            <div class="starter-kit-item-desc">52세 이상 맞춤 절세 3총사 운용 매뉴얼</div>
+          </div>
+        </div>
+        <div class="starter-kit-item gold">
+          <div class="starter-kit-item-icon">📔</div>
+          <div class="starter-kit-item-text">
+            <div class="starter-kit-item-name">2막1장 노후 가계부</div>
+            <div class="starter-kit-item-desc">현금흐름 추적 + 자산 변동 기록 다이어리</div>
+          </div>
+        </div>
+        <div class="starter-kit-item">
+          <div class="starter-kit-item-icon">📋</div>
+          <div class="starter-kit-item-text">
+            <div class="starter-kit-item-name">보험 점검 체크리스트</div>
+            <div class="starter-kit-item-desc">3대 질환·생명보험 약관 단위 점검표</div>
+          </div>
+        </div>
+        <div class="starter-kit-item burgundy">
+          <div class="starter-kit-item-icon">📜</div>
+          <div class="starter-kit-item-text">
+            <div class="starter-kit-item-name">유언장·웰다잉 워크북</div>
+            <div class="starter-kit-item-desc">자필 유언장 양식 + 사전연명의료의향서 안내</div>
+          </div>
+        </div>
+        <div class="starter-kit-item gold">
+          <div class="starter-kit-item-icon">🎟️</div>
+          <div class="starter-kit-item-text">
+            <div class="starter-kit-item-name">회원 전용 행사 우선 초대</div>
+            <div class="starter-kit-item-desc">월 1회 시니어 재테크·웰다잉 세미나 무료</div>
+          </div>
+        </div>
+        <div class="starter-kit-item burgundy">
+          <div class="starter-kit-item-icon">💳</div>
+          <div class="starter-kit-item-text">
+            <div class="starter-kit-item-name">제휴 파트너 할인 혜택</div>
+            <div class="starter-kit-item-desc">건강검진·상조·법무 서비스 최대 30% 할인</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="starter-kit-foot">
+        ★ <strong>₩9,900/월</strong> (첫 한 달 무료) · 시작 키트 가치 <strong>약 20만원 상당</strong> 무료 제공
+      </div>
+    </div>
+  `;
+
+  // Populate unified expert match based on user's weakest categories
+  setTimeout(() => populateUnifiedMatch(), 100);
+}
+
+function populateUnifiedMatch() {
+  const list = document.getElementById('unifiedExpertList');
+  if (!list) return;
+
+  const nameEl = document.getElementById('unifiedMatchName');
+  if (nameEl) nameEl.textContent = (userData.gender === '남' ? '홍길동' : '홍길순') + ' 님';
+
+  // Find weakest 3 categories
+  const cs = userData.categoryScores;
+  const categoryMap = {
+    retirement: { name: '은퇴자금', expertField: '자산관리' },
+    insurance: { name: '보험보장', expertField: '보험' },
+    welldying: { name: '웰다잉', expertField: '웰다잉' },
+    legacy: { name: '상속설계', expertField: '상속세무' },
+    cashflow: { name: '현금흐름', expertField: '자산관리' }
+  };
+
+  const sorted = Object.entries(cs).sort((a, b) => a[1] - b[1]);
+  const weakest = sorted.slice(0, 3).map(([k, v]) => ({ key: k, score: v, ...categoryMap[k] }));
+
+  // Expert pool by field
+  const expertPool = {
+    '자산관리': [
+      { name: '이윤진 수석 컨설턴트', org: 'A생명 은퇴자산연구소', rating: '4.8', reviews: '305', tags: ['현금흐름', '연금'] },
+      { name: '김도현 자산관리사', org: 'B증권 WM센터', rating: '4.9', reviews: '218', tags: ['ETF', '포트폴리오'] }
+    ],
+    '보험': [
+      { name: '정수연 보험분석가', org: '독립 보험설계사', rating: '4.9', reviews: '186', tags: ['3대 질환', '중복 점검'] },
+      { name: '윤지성 보험설계사', org: 'C인슈어런스', rating: '4.7', reviews: '142', tags: ['보장 분석', '리모델링'] }
+    ],
+    '상속세무': [
+      { name: '김지훈 대표 세무사', org: '태성 세무법인 상속·증여 센터장', rating: '4.9', reviews: '128', tags: ['상속·절세'] },
+      { name: '최은경 세무사', org: 'D세무회계 파트너', rating: '4.8', reviews: '95', tags: ['증여 전략', '사전 컨설팅'] }
+    ],
+    '웰다잉': [
+      { name: '한미경 웰다잉 컨설턴트', org: 'E라이프 엔딩플래닝', rating: '4.8', reviews: '67', tags: ['연명의료', '상조 비교'] },
+      { name: '박정원 컨설턴트', org: 'F웰다잉센터', rating: '4.7', reviews: '54', tags: ['임종 메모', '장례 설계'] }
+    ]
+  };
+
+  // Reasons template
+  const reasonMap = {
+    retirement: '은퇴자금 영역 점수가 가장 낮습니다. 자산관리·연금 전략을 통해 격차를 빠르게 줄일 수 있는 전문가입니다.',
+    insurance: '보험보장 영역이 취약합니다. 3대 질환 + 가족력 대응에 특화된 보험 점검을 받아보세요.',
+    welldying: '웰다잉 준비가 미흡한 상태입니다. 사전연명의료의향서부터 상조까지 한번에 정리 가능한 전문가입니다.',
+    legacy: '상속·증여 설계가 부족합니다. 사전 증여 전략으로 향후 절세 효과를 극대화할 수 있습니다.',
+    cashflow: '현금흐름 관리가 약합니다. 자산 고갈 시점을 늦출 수 있는 인출 전략 전문가를 추천드립니다.'
+  };
+
+  // Render top 3 experts
+  let html = '';
+  weakest.forEach((w, idx) => {
+    const pool = expertPool[w.expertField] || expertPool['자산관리'];
+    const expert = pool[0]; // 가장 매칭 점수 높은 1명
+    const rankClass = idx === 0 ? '' : idx === 1 ? 'rank-2' : 'rank-3';
+    html += `
+      <div class="unified-expert-item">
+        <div class="unified-expert-rank ${rankClass}">${idx + 1}</div>
+        <div class="unified-expert-info">
+          <div class="unified-expert-name">
+            ${expert.name}
+            ${expert.tags.map(t => `<span class="unified-expert-tag">${t}</span>`).join('')}
+          </div>
+          <div class="unified-expert-org">${expert.org}</div>
+          <div class="unified-expert-rating">★ ${expert.rating} <span style="color:rgba(255,255,255,0.5);">(상담 후기 ${expert.reviews}건)</span></div>
+          <div class="unified-expert-reason">
+            <strong>AI 추천 사유:</strong> ${reasonMap[w.key]}
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  list.innerHTML = html;
+}
+
+function renderSpiderChart() {
+  const cs = userData.categoryScores;
+  const categories = [
+    { key: 'retirement', name: '은퇴자금', emoji: '💰' },
+    { key: 'insurance', name: '보험보장', emoji: '🛡️' },
+    { key: 'welldying', name: '웰다잉', emoji: '🕯️' },
+    { key: 'legacy', name: '상속설계', emoji: '📜' },
+    { key: 'cashflow', name: '현금흐름', emoji: '💵' }
+  ];
+
+  // SVG spider chart
+  const cx = 200, cy = 200, R = 130;
+  const n = categories.length;
+  const angles = categories.map((_, i) => (-Math.PI / 2) + (i * 2 * Math.PI / n));
+
+  // Grid circles (20, 40, 60, 80, 100)
+  const gridLevels = [0.2, 0.4, 0.6, 0.8, 1.0];
+
+  // Polygon points for data
+  const dataPoints = categories.map((c, i) => {
+    const score = cs[c.key] / 100;
+    const x = cx + R * score * Math.cos(angles[i]);
+    const y = cy + R * score * Math.sin(angles[i]);
+    return `${x},${y}`;
+  }).join(' ');
+
+  // Grid polygons
+  let gridPolygons = '';
+  gridLevels.forEach(lvl => {
+    const points = angles.map(a => {
+      const x = cx + R * lvl * Math.cos(a);
+      const y = cy + R * lvl * Math.sin(a);
+      return `${x},${y}`;
+    }).join(' ');
+    gridPolygons += `<polygon class="spider-grid-line" points="${points}"/>`;
+  });
+
+  // Axis lines
+  let axisLines = '';
+  angles.forEach(a => {
+    const x = cx + R * Math.cos(a);
+    const y = cy + R * Math.sin(a);
+    axisLines += `<line class="spider-axis-line" x1="${cx}" y1="${cy}" x2="${x}" y2="${y}"/>`;
+  });
+
+  // Data points (circles)
+  let dataCircles = '';
+  categories.forEach((c, i) => {
+    const score = cs[c.key] / 100;
+    const x = cx + R * score * Math.cos(angles[i]);
+    const y = cy + R * score * Math.sin(angles[i]);
+    dataCircles += `<circle class="spider-data-point" cx="${x}" cy="${y}" r="5"/>`;
+  });
+
+  // Axis labels
+  let labels = '';
+  categories.forEach((c, i) => {
+    const lbX = cx + (R + 28) * Math.cos(angles[i]);
+    const lbY = cy + (R + 28) * Math.sin(angles[i]) + 4;
+    const anchor = angles[i] === -Math.PI/2 ? 'middle' :
+                   (Math.cos(angles[i]) > 0.1 ? 'start' :
+                    Math.cos(angles[i]) < -0.1 ? 'end' : 'middle');
+    labels += `<text class="spider-axis-label" x="${lbX}" y="${lbY}" text-anchor="${anchor}">${c.emoji} ${c.name}</text>`;
+  });
+
+  // Legend
+  const legend = categories.map(c => {
+    const score = cs[c.key];
+    const cls = score >= 70 ? '' : score >= 50 ? 'mid' : 'low';
+    return `
+      <div class="spider-legend-item ${cls}">
+        <span class="spider-legend-name">${c.emoji} ${c.name}</span>
+        <span class="spider-legend-score">${score}<span style="font-size:11px;color:var(--muted);margin-left:2px;">점</span></span>
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="spider-section">
+      <div class="section-header" style="margin-bottom:20px;">
+        <span class="section-eyebrow gold">5대 영역 종합 진단</span>
+        <h2 class="section-title">당신의 <em>2막 1장 5각 진단</em></h2>
+        <p class="section-desc">은퇴자금·보험보장·웰다잉·상속설계·현금흐름 5개 영역의 균형을 한눈에 확인하세요.</p>
+      </div>
+
+      <div class="spider-grid">
+        <div class="spider-chart-wrap">
+          <svg class="spider-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            ${gridPolygons}
+            ${axisLines}
+            <polygon class="spider-data-fill" id="spiderDataFill" points="${dataPoints}"/>
+            ${dataCircles}
+            ${labels}
+          </svg>
+        </div>
+        <div class="spider-legend">
+          ${legend}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderSimulation() {
+  const orig = userData.originalScore;
+
+  document.getElementById('panel-simulation').innerHTML = `
+    <div class="section">
+      <div class="section-header">
+        <span class="section-eyebrow gold">What-If Simulation</span>
+        <h2 class="section-title">만약 <em>이렇게 바꾼다면?</em></h2>
+        <p class="section-desc">슬라이더를 움직여 각 변수를 조정해보세요. 은퇴 준비 점수가 실시간으로 변화합니다.</p>
+      </div>
+
+      <div class="whatif-section">
+        <div class="whatif-header">
+          <div class="whatif-eyebrow">★ Live Simulation</div>
+          <h3>변수를 조정하면<br><em>점수가 실시간 변경</em>됩니다</h3>
+          <p>은퇴 자금 준비도에 영향을 주는 6가지 핵심 변수를 직접 시뮬레이션해보세요.</p>
+        </div>
+
+        <div class="whatif-score-display">
+          <div class="whatif-score-num">
+            <div class="num" id="simScoreNum">${orig}</div>
+            <div class="label">Readiness</div>
+            <div class="label-ko">은퇴 준비 점수</div>
+          </div>
+          <div class="whatif-score-change">
+            <div class="whatif-change-label">기준 점수 대비 변화</div>
+            <div class="whatif-change-value same" id="simScoreChange">─ 0점 (변화 없음)</div>
+            <div class="whatif-status-text" id="simStatusText">슬라이더를 움직여보세요.<br>은퇴 준비 점수가 어떻게 변할지 즉시 확인할 수 있습니다.</div>
+          </div>
+          <button class="whatif-reset-btn" onclick="resetSimulation()">↺ 초기화</button>
+        </div>
+
+        <div class="whatif-sliders">
+          <div class="whatif-slider-card">
+            <div class="whatif-slider-header">
+              <div class="whatif-slider-title"><span class="icon">💵</span>월 투자금액</div>
+              <div class="whatif-slider-value"><span id="simInvestVal">${userData.monthlyInvest}</span><span class="unit">만원</span></div>
+            </div>
+            <input type="range" class="whatif-slider-input" id="simInvest" min="0" max="200" step="10" value="${userData.monthlyInvest}" oninput="updateSimulation()">
+            <div class="whatif-slider-range"><span>0만</span><span>200만</span></div>
+            <div class="whatif-slider-impact" id="simInvestImpact">월 75만원 이상 시 절세 3총사 최대 활용</div>
+          </div>
+
+          <div class="whatif-slider-card">
+            <div class="whatif-slider-header">
+              <div class="whatif-slider-title"><span class="icon">🏖️</span>은퇴 나이</div>
+              <div class="whatif-slider-value"><span id="simRetireAgeVal">65</span><span class="unit">세</span></div>
+            </div>
+            <input type="range" class="whatif-slider-input" id="simRetireAge" min="55" max="75" step="1" value="65" oninput="updateSimulation()">
+            <div class="whatif-slider-range"><span>55세</span><span>75세</span></div>
+            <div class="whatif-slider-impact" id="simRetireAgeImpact">늦출수록 준비 기간 확보 + 국민연금 수령액 증가</div>
+          </div>
+
+          <div class="whatif-slider-card">
+            <div class="whatif-slider-header">
+              <div class="whatif-slider-title"><span class="icon">📈</span>예상 수익률</div>
+              <div class="whatif-slider-value"><span id="simReturnVal">7</span><span class="unit">%</span></div>
+            </div>
+            <input type="range" class="whatif-slider-input" id="simReturn" min="2" max="12" step="0.5" value="7" oninput="updateSimulation()">
+            <div class="whatif-slider-range"><span>2%</span><span>12%</span></div>
+            <div class="whatif-slider-impact" id="simReturnImpact">미국 S&P500 장기 평균 약 7~10%</div>
+          </div>
+
+          <div class="whatif-slider-card">
+            <div class="whatif-slider-header">
+              <div class="whatif-slider-title"><span class="icon">📉</span>월 생활비 (은퇴 후)</div>
+              <div class="whatif-slider-value"><span id="simExpenseVal">${userData.targetExpense}</span><span class="unit">만원</span></div>
+            </div>
+            <input type="range" class="whatif-slider-input" id="simExpense" min="100" max="500" step="10" value="${userData.targetExpense}" oninput="updateSimulation()">
+            <div class="whatif-slider-range"><span>100만</span><span>500만</span></div>
+            <div class="whatif-slider-impact" id="simExpenseImpact">줄일수록 필요 자산 감소 (25배 법칙)</div>
+          </div>
+
+          <div class="whatif-slider-card">
+            <div class="whatif-slider-header">
+              <div class="whatif-slider-title"><span class="icon">🏠</span>주택연금 활용</div>
+              <div class="whatif-slider-value"><span id="simHomeVal">${userData.assets.includes('자가주택') ? '활용' : '미활용'}</span></div>
+            </div>
+            <input type="range" class="whatif-slider-input" id="simHome" min="0" max="1" step="1" value="${userData.assets.includes('자가주택') ? 1 : 0}" oninput="updateSimulation()">
+            <div class="whatif-slider-range"><span>미활용</span><span>활용</span></div>
+            <div class="whatif-slider-impact" id="simHomeImpact">60세 이후 평생 월 70~150만 확보 가능</div>
+          </div>
+
+          <div class="whatif-slider-card">
+            <div class="whatif-slider-header">
+              <div class="whatif-slider-title"><span class="icon">🛡️</span>3대 질환 보험</div>
+              <div class="whatif-slider-value"><span id="simInsVal">현재</span></div>
+            </div>
+            <input type="range" class="whatif-slider-input" id="simIns" min="0" max="3" step="1" value="${countInsured()}" oninput="updateSimulation()">
+            <div class="whatif-slider-range"><span>미가입</span><span>전부 가입</span></div>
+            <div class="whatif-slider-impact" id="simInsImpact">암·뇌혈관·심혈관 — 발병 시 연금 납입 중단 방지</div>
+          </div>
+        </div>
+      </div>
+
+      ${renderReportSubscription()}
+    </div>
+  `;
+}
+
+function countInsured() {
+  if (!userData.insurances) return 0;
+  return ['cancer','brain','heart'].filter(t => userData.insurances[t] && userData.insurances[t].status === '가입').length;
+}
+
+function updateSimulation() {
+  const invest = parseFloat(document.getElementById('simInvest').value);
+  const retireAge = parseFloat(document.getElementById('simRetireAge').value);
+  const ret = parseFloat(document.getElementById('simReturn').value);
+  const expense = parseFloat(document.getElementById('simExpense').value);
+  const home = parseFloat(document.getElementById('simHome').value);
+  const ins = parseFloat(document.getElementById('simIns').value);
+
+  // Update display values
+  document.getElementById('simInvestVal').textContent = invest;
+  document.getElementById('simRetireAgeVal').textContent = retireAge;
+  document.getElementById('simReturnVal').textContent = ret;
+  document.getElementById('simExpenseVal').textContent = expense;
+  document.getElementById('simHomeVal').textContent = home === 1 ? '활용' : '미활용';
+  const insLabels = ['미가입','1건','2건','전부'];
+  document.getElementById('simInsVal').textContent = insLabels[ins];
+
+  // Calculate new score
+  let newScore = userData.originalScore;
+
+  // Investment impact (vs current monthlyInvest)
+  const investDelta = invest - userData.monthlyInvest;
+  newScore += investDelta * 0.15;
+
+  // Retire age (later = more prep time)
+  const ageDelta = retireAge - 65;
+  newScore += ageDelta * 1.2;
+
+  // Return rate
+  const retDelta = ret - 7;
+  newScore += retDelta * 1.5;
+
+  // Expense (lower = better)
+  const expDelta = userData.targetExpense - expense;
+  newScore += expDelta * 0.1;
+
+  // Home pension
+  const origHome = userData.assets.includes('자가주택') ? 1 : 0;
+  if (home > origHome) newScore += 8;
+  else if (home < origHome) newScore -= 5;
+
+  // Insurance
+  const origIns = countInsured();
+  const insDelta = ins - origIns;
+  newScore += insDelta * 4;
+
+  newScore = Math.max(15, Math.min(98, Math.round(newScore)));
+  const change = newScore - userData.originalScore;
+
+  document.getElementById('simScoreNum').textContent = newScore;
+
+  const changeEl = document.getElementById('simScoreChange');
+  if (change > 0) {
+    changeEl.innerHTML = '▲ +' + change + '점 (개선)';
+    changeEl.className = 'whatif-change-value up';
+  } else if (change < 0) {
+    changeEl.innerHTML = '▼ ' + change + '점 (악화)';
+    changeEl.className = 'whatif-change-value down';
+  } else {
+    changeEl.innerHTML = '─ 0점 (변화 없음)';
+    changeEl.className = 'whatif-change-value same';
+  }
+
+  // Status message
+  let msg = '';
+  if (newScore >= 80) msg = '아주 훌륭한 준비 상태입니다.<br>이대로 실행하시면 안정적인 노후가 가능합니다.';
+  else if (newScore >= 65) msg = '양호한 준비 상태입니다.<br>몇 가지만 보완하면 더 든든해집니다.';
+  else if (newScore >= 50) msg = '기본기는 갖춰져 있으나 추가 보완이 필요합니다.';
+  else msg = '준비가 부족합니다.<br>지금부터 핵심 영역 우선 점검이 필요합니다.';
+  document.getElementById('simStatusText').innerHTML = msg;
+
+  // Update impact texts dynamically
+  updateImpactTexts(invest, retireAge, ret, expense, home, ins, change);
+}
+
+function updateImpactTexts(invest, retireAge, ret, expense, home, ins, change) {
+  const items = [
+    { id:'simInvestImpact', text: invest >= 75 ? '✓ 절세 3총사 한도 최대 활용 가능' : invest >= 50 ? '연금저축만 최대 활용 가능' : '추가 투자 여력 필요' },
+    { id:'simRetireAgeImpact', text: retireAge >= 65 ? '국민연금 100% 수령 + 추가 준비 시간' : retireAge >= 60 ? '조기 수령 시 감액 적용' : '준비 기간 부족 가능성' },
+    { id:'simReturnImpact', text: ret >= 7 ? '미국 주식 ETF 중심 운용 가정' : ret >= 4 ? '주식+채권 분산 운용 가정' : '저위험 자산 위주 가정' },
+    { id:'simExpenseImpact', text: expense >= 300 ? '여유로운 노후 라이프스타일' : expense >= 200 ? '평균적 노후 생활비' : '검소한 노후 생활' },
+    { id:'simHomeImpact', text: home === 1 ? '✓ 60세 이후 평생 월 70~150만 확보' : '주택연금 미활용 — 자산 유동성 ↓' },
+    { id:'simInsImpact', text: ins === 3 ? '✓ 3대 질환 완전 보장' : ins === 2 ? '1건 미가입 — 보장 공백 가능' : ins === 1 ? '2건 미가입 — 보장 부족' : '미가입 — 발병 시 노후 재무 위협' }
+  ];
+  items.forEach(item => {
+    const el = document.getElementById(item.id);
+    if (el) el.textContent = item.text;
+  });
+}
+
+function resetSimulation() {
+  document.getElementById('simInvest').value = userData.monthlyInvest;
+  document.getElementById('simRetireAge').value = 65;
+  document.getElementById('simReturn').value = 7;
+  document.getElementById('simExpense').value = userData.targetExpense;
+  document.getElementById('simHome').value = userData.assets.includes('자가주택') ? 1 : 0;
+  document.getElementById('simIns').value = countInsured();
+  updateSimulation();
+}
+
+function renderReportSubscription() {
+  return `
+    <div class="report-sub-section" style="margin-top:32px;">
+      <div class="report-sub-eyebrow">
+        <span>📬</span> Weekly · Monthly Report
+      </div>
+      <h3>매주·매월 <em>맞춤 리포트</em>를<br>이메일로 받아보세요</h3>
+      <p>당신의 진단 결과와 What-If 시뮬레이션 변화, 시장 상황을 반영한 맞춤 리포트를 정기적으로 전달해드립니다.</p>
+
+      <div class="report-freq-row">
+        <label><input type="radio" name="reportFreq" value="weekly" checked>
+          <div class="report-freq-name">주간 리포트</div>
+          <div class="report-freq-desc">매주 월요일 발송</div>
+        </label>
+        <label><input type="radio" name="reportFreq" value="biweekly">
+          <div class="report-freq-name">격주 리포트</div>
+          <div class="report-freq-desc">2주 간격 발송</div>
+        </label>
+        <label><input type="radio" name="reportFreq" value="monthly">
+          <div class="report-freq-name">월간 리포트</div>
+          <div class="report-freq-desc">매월 1일 발송</div>
+        </label>
+      </div>
+
+      <div class="report-sub-form">
+        <input type="email" class="report-sub-input" id="reportEmail" placeholder="이메일 주소 (example@email.com)">
+        <button class="btn-subscribe" onclick="subscribeReport()">구독하기</button>
+      </div>
+
+      <div class="report-sub-features">
+        <div class="report-feature-item">5대 영역 점수 변화 추적</div>
+        <div class="report-feature-item">What-If 시뮬레이션 업데이트</div>
+        <div class="report-feature-item">시장 상황 반영 추천 액션</div>
+        <div class="report-feature-item">2막1장 플래너 칼럼 제공</div>
+      </div>
+    </div>
+  `;
+}
+
+function subscribeReport() {
+  const email = document.getElementById('reportEmail').value;
+  const freq = document.querySelector('input[name="reportFreq"]:checked').value;
+  if (!email || !email.includes('@')) {
+    alert('올바른 이메일 주소를 입력해주세요.');
+    return;
+  }
+  const freqText = { weekly: '주간', biweekly: '격주', monthly: '월간' }[freq];
+  alert(`✓ ${freqText} 리포트 구독이 완료되었습니다!\n${email}로 첫 리포트가 발송됩니다.`);
+}
+
+function switchPanel(e, tab) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  e.target.classList.add('active');
+  document.getElementById('panel-' + tab).classList.add('active');
+  window.scrollTo({ top: document.querySelector('.tabs-bar').offsetTop - 80, behavior: 'smooth' });
+}
+
+// ============ MODAL FUNCTIONS ============
+function openModal(id) {
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove('active');
+  document.body.style.overflow = '';
+  // Reset success state
+  setTimeout(() => {
+    if (id === 'modal-premium') {
+      document.getElementById('premiumForm').style.display = 'block';
+      document.getElementById('premiumSuccess').classList.remove('show');
+    } else if (id === 'modal-expert') {
+      document.getElementById('expertForm').style.display = 'block';
+      document.getElementById('expertSuccess').classList.remove('show');
+    }
+  }, 300);
+}
+
+function openExpertModal(area) {
+  const titles = {
+    '자산관리': { eyebrow: 'Wealth Advisor', title: '자산관리·재무설계<br><em>전문가 매칭</em>', desc: 'CFP 자격 보유 재무설계사 32명 중에서' },
+    '보험': { eyebrow: 'Insurance Advisor', title: '보험 종합점검<br><em>전문가 매칭</em>', desc: '독립 보험설계사 48명 중에서' },
+    '상속세무': { eyebrow: 'Tax Accountant', title: '상속·증여 세무<br><em>전문가 매칭</em>', desc: '검증된 세무사 21명 중에서' },
+    '유언공증': { eyebrow: 'Legal Expert', title: '유언장·공증<br><em>전문가 매칭</em>', desc: '법무사·변호사 15명 중에서' },
+    '웰다잉': { eyebrow: 'End-of-Life Planner', title: '웰다잉·상조<br><em>전문가 매칭</em>', desc: '웰다잉 컨설턴트 12명 중에서' },
+    '부동산': { eyebrow: 'Real Estate Specialist', title: '부동산·주택연금<br><em>전문가 매칭</em>', desc: '감정평가사·공인중개사 18명 중에서' }
+  };
+  const info = titles[area];
+  if (info) {
+    document.getElementById('expertModalEyebrow').textContent = info.eyebrow;
+    document.getElementById('expertModalTitle').innerHTML = info.title;
+    document.getElementById('expertModalDesc').textContent = info.desc;
+    document.getElementById('expertArea').value = area;
+  }
+  openModal('modal-expert');
+}
+
+function submitPremium() {
+  const name = document.getElementById('premiumName').value;
+  const phone = document.getElementById('premiumPhone').value;
+  const area = document.getElementById('premiumArea').value;
+  if (!name || !phone || !area) {
+    alert('필수 항목(분야·성함·연락처)을 모두 입력해주세요.');
+    return;
+  }
+  document.getElementById('premiumForm').style.display = 'none';
+  document.getElementById('premiumSuccess').classList.add('show');
+}
+
+function submitExpert() {
+  const name = document.getElementById('expertName').value;
+  const phone = document.getElementById('expertPhone').value;
+  if (!name || !phone) {
+    alert('성함과 연락처를 입력해주세요.');
+    return;
+  }
+  document.getElementById('expertForm').style.display = 'none';
+  document.getElementById('expertSuccess').classList.add('show');
+}
+
+// ESC key to close modal
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.active').forEach(m => {
+      closeModal(m.id);
+    });
+  }
+});
+</script>
+</body>
+</html>
