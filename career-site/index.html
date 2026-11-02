@@ -8,12 +8,12 @@
 :root{--green:#0E3A26;--green2:#1C7A4E;--cream:#FAF8F3;--gold:#C8A65A;--ink:#18231d;--muted:#6b756f;--line:#dfe5df;--soft:#eef4ef;--white:#fff;--warn:#856c2a}
 *{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans KR",sans-serif;background:var(--cream);color:var(--ink)}
 header{height:68px;background:var(--green);color:white;display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:4}.brand{font-weight:800;letter-spacing:.3px}.brand span{color:#e6d29d}.nav{font-size:14px;opacity:.9}
-.shell{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:300px 1fr;min-height:calc(100vh - 68px)}
+.shell{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:280px 1fr;min-height:calc(100vh - 68px)}
 .sidebar{padding:30px 22px;border-right:1px solid var(--line);background:#f7f6f1}.sidebar h3{margin:0 0 14px;color:var(--green)}.mini{background:white;border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px}.mini b{display:block;margin-bottom:6px}.mini small{color:var(--muted)}
-main{padding:42px 46px}.screen{display:none;max-width:760px;margin:auto}.screen.active{display:block}.eyebrow{font-size:14px;color:var(--green2);font-weight:700;margin-bottom:10px}.title{font-size:34px;line-height:1.2;margin:0 0 16px;color:var(--green)}.lead{font-size:18px;line-height:1.7;color:#435148;margin-bottom:26px}
+main{padding:38px 42px 64px}.screen{display:none;max-width:820px;margin:auto}.screen.active{display:block}.eyebrow{font-size:14px;color:var(--green2);font-weight:700;margin-bottom:10px}.title{font-size:34px;line-height:1.24;margin:0 0 16px;color:var(--green);letter-spacing:-.7px;word-break:keep-all}.lead{font-size:18px;line-height:1.7;color:#435148;margin-bottom:26px}
 .btns{display:grid;gap:12px}.btn{border:1px solid var(--line);background:white;border-radius:14px;padding:17px 18px;font-size:17px;text-align:left;cursor:pointer;transition:.15s}.btn:hover{border-color:var(--green2);transform:translateY(-1px)}.btn.selected{border:2px solid var(--green2);background:var(--soft)}.primary{display:inline-block;border:0;background:var(--green2);color:white;border-radius:14px;padding:16px 22px;font-size:17px;font-weight:700;cursor:pointer}.secondary{display:inline-block;border:1px solid var(--line);background:white;color:var(--green);border-radius:14px;padding:15px 20px;font-size:16px;font-weight:700;cursor:pointer}.actions{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}.muted{color:var(--muted);font-size:14px}.progress{display:flex;gap:8px;margin-bottom:26px;flex-wrap:wrap}.tag{font-size:13px;padding:7px 10px;border-radius:999px;background:white;border:1px solid var(--line)}.tag.done{background:var(--soft);color:var(--green2);border-color:#cde0d3}.tag.now{background:var(--green);color:white;border-color:var(--green)}
 .card{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;margin-bottom:16px}.card h3{margin:0 0 10px;color:var(--green)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.path{min-height:240px;display:flex;flex-direction:column}.path .letter{font-size:13px;color:var(--green2);font-weight:800}.path h3{font-size:20px}.path p{line-height:1.6;color:#4d5952}.role{border-top:1px solid var(--line);padding-top:12px;margin-top:auto;font-weight:700}.status{font-size:13px;border-radius:999px;padding:5px 9px;display:inline-block;background:#f1f4f1;color:#4a574f}.fit{display:grid;grid-template-columns:1.2fr .6fr 2.2fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);align-items:start}.fit:last-child{border:0}.fit b{color:var(--green)}.why{background:#f8fbf8;border-left:4px solid var(--green2);padding:15px 16px;margin:12px 0;border-radius:8px}.good{color:var(--green2);font-weight:700}.check{margin:6px 0}.footer-note{margin-top:28px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.pill{display:inline-block;background:#fff3d6;color:#735a19;padding:5px 8px;border-radius:999px;font-size:12px;margin-left:6px}
-@media(max-width:860px){header{padding:0 16px}.nav{display:none}.shell{display:block}.sidebar{display:none}main{padding:28px 18px}.title{font-size:29px}.lead{font-size:17px}.grid3,.grid2{grid-template-columns:1fr}.fit{grid-template-columns:1fr}.btn{font-size:16px;padding:16px}.actions{position:sticky;bottom:0;background:linear-gradient(transparent,var(--cream) 18%);padding-top:24px;padding-bottom:12px}}
+@media(max-width:860px){header{height:62px;padding:0 16px}.nav{display:none}.shell{display:block}.sidebar{display:none}main{padding:26px 18px 52px}.screen{max-width:none}.title{font-size:27px;line-height:1.28;letter-spacing:-.8px}.lead{font-size:16px;line-height:1.65}.card{padding:19px;border-radius:16px}.grid3,.grid2{grid-template-columns:1fr}.fit{grid-template-columns:1fr;gap:5px}.btn{font-size:16px;padding:16px;min-height:54px}.actions{position:sticky;bottom:0;background:linear-gradient(transparent,var(--cream) 20%);padding-top:26px;padding-bottom:10px}.actions .primary,.actions .secondary{width:100%;text-align:center}.progress{gap:6px;margin-bottom:20px}.tag{font-size:12px;padding:6px 8px}}
 </style>
 </head>
 <body>
@@ -21,12 +21,12 @@ main{padding:42px 46px}.screen{display:none;max-width:760px;margin:auto}.screen.
 <div class="shell">
 <aside class="sidebar">
 <h3>나의 Career 2.0</h3>
-<div class="mini"><b id="sideField">경력 확인 중</b><small id="sideDetail">답할수록 프로파일이 정교해집니다.</small></div>
+<div class="mini"><b id="sideField">아직 선택 전</b><small id="sideDetail">답할수록 프로파일이 정교해집니다.</small></div>
 <div class="mini"><b>진행 방식</b><small>경력 확인 ✓ → 강점 찾기 → 다음 역할 → 근무조건</small></div>
 <div class="mini"><b>원칙</b><small>점수로 평가하지 않고, 왜 이런 결과가 나왔는지 설명합니다.</small></div>
 </aside>
 <main>
-<div id="s0" class="screen active"><div class="eyebrow">Career 2.0</div><h1 class="title">지금까지 해온 일을<br>앞으로의 역할로 다시 정리해봅니다.</h1><p class="lead">몇 가지만 알려주세요. 약 5분이면 첫 커리어 프로파일을 볼 수 있습니다.</p><div class="card"><div class="check">✔ 대부분 버튼으로 선택합니다.</div><div class="check">✔ 잘 모르겠으면 넘어가도 됩니다.</div><div class="check">✔ 중간에 멈춰도 이어서 볼 수 있습니다.</div></div><div class="actions"><button class="primary" onclick="go(1)">내 경력 정리 시작하기</button></div></div>
+<div id="s0" class="screen active"><div class="eyebrow">Career 2.0 · 첫 결과 약 5분</div><h1 class="title">지금까지 해온 일을<br>다음 역할로 다시 정리해봅니다.</h1><p class="lead">복잡한 진단 대신, 지금까지의 경력과 경험을 먼저 정리합니다. 몇 가지만 알려주시면 첫 커리어 프로파일을 보여드립니다.</p><div class="card"><div class="check">✔ 대부분 버튼으로 선택합니다.</div><div class="check">✔ 잘 모르겠으면 넘어가도 됩니다.</div><div class="check">✔ 중간에 멈춰도 이어서 볼 수 있습니다.</div></div><div class="actions"><button class="primary" onclick="go(1)">내 경력 정리 시작하기</button></div></div>
 <div id="s1" class="screen"><div class="progress"><span class="tag now">경력 확인</span><span class="tag">강점 찾기</span><span class="tag">다음 역할</span></div><div class="eyebrow">첫 번째</div><h2 class="title">지금까지 가장 오래 일한 분야는 어디인가요?</h2><div class="btns" id="industry"></div></div>
 <div id="s2" class="screen"><div class="progress"><span class="tag now">경력 확인</span><span class="tag">강점 찾기</span><span class="tag">다음 역할</span></div><div class="eyebrow">주요 업무</div><h2 class="title">주로 어떤 일을 하셨나요?</h2><p class="muted">여러 개 선택해도 됩니다.</p><div class="btns" id="jobs"></div><div class="actions"><button class="secondary" onclick="go(1)">이전</button><button class="primary" onclick="go(3)">다음</button></div></div>
 <div id="s3" class="screen"><div class="progress"><span class="tag now">경력 확인</span><span class="tag">강점 찾기</span><span class="tag">다음 역할</span></div><div class="eyebrow">경력기간</div><h2 class="title">이 분야에서 어느 정도 일하셨나요?</h2><div class="btns" id="years"></div></div>
@@ -49,13 +49,43 @@ main{padding:42px 46px}.screen{display:none;max-width:760px;margin:auto}.screen.
 <div id="s20" class="screen"><div class="eyebrow">재방문 홈</div><h2 class="title">나의 Career 2.0</h2><div class="grid2"><div class="card"><h3>지난번 확인한 방향</h3><p>경험을 다른 방식으로 활용</p></div><div class="card"><h3>우선 탐색 역할</h3><p>생산개선 프로젝트 PM</p></div></div><div class="card"><h3>다음으로 확인하면 좋은 것</h3><p>시장기회와 외부 프로젝트 경험을 확인하면 역할을 더 정교하게 비교할 수 있습니다.</p></div><div class="actions"><button class="primary" onclick="go(15)">지난 결과 보기</button><button class="secondary" onclick="go(0)">처음부터 시연</button></div><div class="footer-note">Prototype v1 · 실제 서비스에서는 사용자 FACT, Role Library, Evidence가 연결됩니다.</div></div>
 </main></div>
 <script>
-const st={industry:'생산·제조',jobs:['생산관리','품질관리'],years:'20~30년',resp:'부서 책임',strengths:['현장 개선','품질관리','협력사 관리','프로젝트 조정'],pref:'경험을 살려 다른 방식으로',arr:[]};
+const st={industry:'',jobs:[],years:'',resp:'',strengths:[],pref:'',arr:[]};
 function renderButtons(id,items,next,multi=false,key=null){const el=document.getElementById(id);el.innerHTML='';items.forEach(x=>{let b=document.createElement('button');b.className='btn';b.textContent=x;b.onclick=()=>{if(multi){b.classList.toggle('selected');if(key){const a=st[key]||[];const ix=a.indexOf(x);ix>=0?a.splice(ix,1):a.push(x);st[key]=a}}else{if(key)st[key]=x;go(next)}};el.appendChild(b)})}
-function go(n){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById('s'+n).classList.add('active');window.scrollTo(0,0);sync()}
-function sync(){document.getElementById('sideField').textContent=st.industry||'경력 확인 중';document.getElementById('sideDetail').textContent=(st.jobs||[]).join(' · ')||'답할수록 프로파일이 정교해집니다.';document.getElementById('sum1').textContent=(st.industry||'선택한 분야')+' · '+(st.years||'경력기간');document.getElementById('sum2').textContent=((st.jobs||[]).join('와 ')||'주요 업무')+' 경험을 해오셨네요.';document.getElementById('profileCareer').innerHTML=(st.industry||'')+'<br>'+((st.jobs||[]).join(' · '));document.getElementById('profileStrength').textContent=(st.strengths||[]).join(' · ');document.getElementById('profilePref').textContent=st.pref||'아직 잘 모르겠어요'}
+function go(n){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById('s'+n).classList.add('active');window.scrollTo(0,0);sync(); if(n===9||n===10||n===15){syncRoleDemo()}}
+function sync(){document.getElementById('sideField').textContent=st.industry||'아직 선택 전';document.getElementById('sideDetail').textContent=(st.jobs||[]).join(' · ')||'답할수록 프로파일이 정교해집니다.';document.getElementById('sum1').textContent=(st.industry||'선택한 분야')+' · '+(st.years||'경력기간');document.getElementById('sum2').textContent=((st.jobs||[]).join('와 ')||'주요 업무')+' 경험을 해오셨네요.';document.getElementById('profileCareer').innerHTML=(st.industry||'')+'<br>'+((st.jobs||[]).join(' · '));document.getElementById('profileStrength').textContent=(st.strengths||[]).join(' · ');document.getElementById('profilePref').textContent=st.pref||'아직 잘 모르겠어요'}
+function syncRoleDemo(){
+ const manufacturing=st.industry==='생산·제조';
+ document.querySelectorAll('.role-demo-note').forEach(el=>el.remove());
+ if(!manufacturing){
+   const s9=document.getElementById('s9');
+   if(s9&&!s9.querySelector('.role-demo-note')){
+     const note=document.createElement('div');note.className='why role-demo-note';
+     note.innerHTML='<b>현재 Prototype 안내:</b> 업종별 Role Library 연결은 다음 단계에서 붙입니다. 지금 화면의 구체 Role 예시는 제조업 시나리오용입니다.';
+     s9.insertBefore(note,s9.querySelector('.actions'));
+   }
+ }
+}
 function chooseIncome(x){st.income=x;go(14)}
-renderButtons('industry',['생산·제조','영업·마케팅','경영·관리','기술·연구','IT·디지털','금융','교육','건설·현장','공공','서비스','기타'],2,false,'industry');
-renderButtons('jobs',['생산관리','품질관리','공정관리','설비관리','구매·조달','현장운영','기타'],3,true,'jobs');
+const jobMap={
+'생산·제조':['생산관리','품질관리','공정관리','설비관리','구매·조달','현장운영','기타'],
+'영업·마케팅':['B2B 영업','영업관리','채널 운영','마케팅','고객관리','사업개발','기타'],
+'경영·관리':['인사','총무','기획','사업운영','회계·재무','구매','기타'],
+'기술·연구':['연구개발','기술개발','기술지원','시험·평가','품질·인증','프로젝트 관리','기타'],
+'IT·디지털':['개발','시스템 운영','IT 기획','데이터','보안','프로젝트 관리','기타'],
+'금융':['여신·심사','리스크','영업','자산관리','준법·내부통제','운영','기타'],
+'교육':['교육 운영','교육 기획','강의','교직','상담·코칭','콘텐츠 개발','기타'],
+'건설·현장':['현장관리','공정관리','안전관리','품질관리','시설관리','협력사 관리','기타'],
+'공공':['사업운영','행정','정책·기획','민원·상담','현장지원','평가·심사','기타'],
+'서비스':['고객지원','운영관리','매장·현장관리','상담','교육','영업','기타'],
+'기타':['관리·운영','전문기술','영업·고객','기획·프로젝트','교육·지원','기타']
+};
+function renderJobButtons(){st.jobs=[];renderButtons('jobs',jobMap[st.industry]||jobMap['기타'],3,true,'jobs')}
+const industryEl=document.getElementById('industry');
+['생산·제조','영업·마케팅','경영·관리','기술·연구','IT·디지털','금융','교육','건설·현장','공공','서비스','기타'].forEach(x=>{
+ const b=document.createElement('button'); b.className='btn'; b.textContent=x;
+ b.onclick=()=>{st.industry=x;renderJobButtons();go(2)}; industryEl.appendChild(b);
+});
+renderJobButtons();
 renderButtons('years',['10년 미만','10~20년','20~30년','30년 이상'],4,false,'years');
 renderButtons('responsibility',['실무 중심','파트·팀 책임','부서 책임','임원·사업 책임','해당 없음'],6,false,'resp');
 renderButtons('strengths',['조직·사람관리','현장 개선','품질관리','공정 운영','협력사 관리','공장 운영','프로젝트 조정','후배 교육','해외 업무','기타'],7,true,'strengths');
